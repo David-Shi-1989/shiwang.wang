@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="assets/css/vendor/bootstrap-3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/vendor/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/index.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/blogitem.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/blogList.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/resume.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/productList.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/albumList.css">
+    <script type="text/javascript" src="assets/js/vendor/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="assets/js/vendor/json2.js"></script>
+    <script type="text/javascript" src="assets/js/vendor/underscore-min.js"></script>
+    <script type="text/javascript" src="assets/js/vendor/backbone.js"></script>
+    <script type="text/javascript" src="assets/js/vendor/backbone.marionette.js"></script>
+    <script type="text/javascript" src="assets/css/vendor/bootstrap-3.3.4/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="assets/js/app.js"></script>
+
+    <script type="text/javascript" src="assets/js/entities/articlelist.js"></script>
+    <script type="text/javascript" src="assets/js/entities/rightmenu.js"></script>
+    <script type="text/javascript" src="assets/js/router.js"></script>
+
+    <script type="text/javascript" src="assets/js/list/show_index.js"></script>
+    <script type="text/javascript" src="assets/js/controller/show_index.js"></script>
+    <script type="text/javascript" src="assets/js/list/right_menu.js"></script>
+    <script type="text/javascript" src="assets/js/controller/right_menu.js"></script>
+    <script type="text/javascript" src="assets/js/list/show_article.js"></script>
+    <script type="text/javascript" src="assets/js/controller/show_article.js"></script>
+    <script type="text/javascript" src="assets/js/list/articlePage_list.js"></script>
+    <script type="text/javascript" src="assets/js/controller/articlePage_list.js"></script>
+    <script type="text/javascript" src="assets/js/list/resume_page.js"></script>
+    <script type="text/javascript" src="assets/js/controller/resume_page.js"></script>
+    <script type="text/javascript" src="assets/js/entities/product.js"></script>
+    <script type="text/javascript" src="assets/js/list/product_list.js"></script>
+    <script type="text/javascript" src="assets/js/controller/product_list.js"></script>
+    <script type="text/javascript" src="assets/js/entities/album.js"></script>
+    <script type="text/javascript" src="assets/js/list/album_list.js"></script>
+    <script type="text/javascript" src="assets/js/controller/album_list.js"></script>
+
+    <title>施旺旺的主页</title>
+</head>
+<body>
+    <div id="content">
+        <header></header>
+        <div id="main" class="row">
+            <div id="main_left" class="col-md-8">
+                <!--<ul id="articleList">-->
+                <!--</ul>-->
+            </div>
+            <div class="col-md-1"></div>
+            <div id="main_right" class="col-md-3">
+                <div id="block_title">
+                    <a>David的博客园</a>
+                    <p>技术与梦想 生活与追求</p>
+                </div>
+                <div id="block_menu">
+                </div>
+                <div id="block_card">
+                    <div id="block_card_introduce">
+                        <div class="avatar-container">
+                            <img src="assets/image/avatar.jpg" class="float-l">
+                        </div>
+
+                        <div class="float-r">
+                            <h3>大卫施</h3>
+                            <p>生活不止眼前的苟且，还有诗和远方的田野。</p>
+                        </div>
+                        <div class="clr"></div>
+                    </div>
+                </div>
+                <div id="block_stastics" class="cannot-select">
+                    <ul>
+                        <li><span class="block-stastics-title">日志</span><span class="block-stastics-count">10</span><div class="clr"></div></li>
+                        <li><span class="block-stastics-title">分类</span><span class="block-stastics-count">3</span><div class="clr"></div></li>
+                        <li><span class="block-stastics-title">标签</span><span class="block-stastics-count">10</span><div class="clr"></div></li>
+                        <li><span class="block-stastics-title">作品</span><span class="block-stastics-count">6</span><div class="clr"></div></li>
+                    </ul>
+                    <ul>
+                        <li><span class="block-stastics-title">开博时间</span><span class="block-stastics-count">10</span><div class="clr"></div></li>
+                        <li><span class="block-stastics-title">访客统计</span><span class="block-stastics-count">3</span><div class="clr"></div></li>
+                        <li><span class="block-stastics-title">留言统计</span><span class="block-stastics-count">10</span><div class="clr"></div></li>
+                        <li><span class="block-stastics-title">点赞统计</span><span class="block-stastics-count">6</span><div class="clr"></div></li>
+                    </ul>
+                </div>
+                <div id="block_socialAccount">
+                    <a><i class="fa fa-github"></i>Github</a>
+                    <a><i class="fa fa-weibo"></i>新浪微博</a>
+                    <a><i class="fa fa-facebook"></i>Facebook</a>
+                    <a target="_blank" href="assets/image/vcode.png"><i class="fa fa-wechat"></i>微信</a>
+                </div>
+            </div>
+        </div>
+        <footer class="row">
+            <div id="footer_left" class="col-md-8">
+                <div id="copyright">
+                    <p>© 2014 - 2017 By David Shi 施旺旺</p>
+                    <a target="_blank" href="http://www.miitbeian.gov.cn/">皖ICP备16003774号</a>
+                </div>
+            </div>
+            <div class="col-md-1"></div>
+            <div id="footer_right" class="col-md-3">
+                <i class="fa fa-arrow-up" title="返回顶部" id="btn_backTotop"></i>
+            </div>
+        </footer>
+    </div>
+
+    <!---Article List Index---->
+    <script type="text/template" id="blog-article-list-view">
+    </script>
+    <script type="text/template" id="blog-article-list-item">
+        <a class="article-title" data-id="<%= id %>" target="_blank"><%= title %></a>
+        <div class="article-info cannot-select">
+            <a class="article-tag-original"></a>
+            <span class="article-tag-datetime"><%= datetime %></span>
+            <span class="article-tag-author"><%= author %></span>
+            <a class="article-tag-tag"><i class="fa fa-tag"></i>科技</a>
+            <a class="article-tag-tag"><i class="fa fa-tag"></i>技术博文</a>
+            <a class="article-tag-tag"><i class="fa fa-tag"></i>Node.js</a>
+            <span class="article-tag-comments float-r">评论(<span class="textdecoration-under">0</span>)</span>
+            <span class="article-tag-views float-r">阅读(<span class="textdecoration-under">2</span>)</span>
+        </div>
+        <div class="article-content">
+            <p><%= content %></p>
+        </div>
+        <a class="article-btn-readmore" target="_blank">阅读全文</a>
+    </script>
+
+    <!---Blog List---->
+
+    <!---Article Show ---->
+    <script type="text/template" id="article-show">
+        <div class="blog-item-titleContainer">
+            <h4 class="blog-item-title blog-item-original overflow-ellipsis">JavaScript之prototype继承</h4>
+            <a class="blog-item-text"><i class="fa fa-folder-open"></i>JavaScript</a>
+        </div>
+        <div class="blog-item-infoContainer">
+            <p class="blog-item-text blog-item-datetime">2017-04-14 10:46:38</p>
+            <div class="blog-item-tagContainer overflow-ellipsis">
+                <a class="blog-item-text blog-item-tag"><i class="fa fa-tag"></i>ThinkPHP</a>
+                <a class="blog-item-text blog-item-tag"><i class="fa fa-tag"></i>微信公众号开发</a>
+            </div>
+            <div class="blog-item-countContainer">
+                <p class="blog-item-text blog-item-viewcount cannot-select"><i class="fa fa-eye"></i>(23)</p>
+                <p class="blog-item-text blog-item-commentcount cannot-select"><i class="fa fa-comment-o"></i>(10)</p>
+            </div>
+        </div>
+        <div class="blog-item-contentContainer">
+            <p>啊，啊  什么都不必说 </p>
+        </div>
+        <div class="blog-item-likesContainer cannot-select">
+            <span class="blog-like"><i class="fa fa-thumbs-o-up"></i>Likes</span>
+            <span class="blog-unlike"><i class="fa fa-thumbs-o-down"></i>So so...</span>
+        </div>
+        <div class="blog-item-footer">
+            <p class="text-left">上一篇<a>微信开发二</a></p>
+            <p class="text-right">下一篇<a>微信开发三</a></p>
+        </div>
+    </script>
+
+    <!---Blog Page Article List ---->
+    <script type="text/template" id="article-page-list">
+        <h3>文章列表</h3>
+        <ul id="blog_list">
+            <!--<li class="bl-article-item bl-tag-original">-->
+                <!--<a class="bl-title" target="_self" href="">Smartisan T1，锤子手机20天评测报告</a>-->
+                <!--<span class="bl-datetime">2017-02-20 14:21:11</span>-->
+            <!--</li>-->
+            <!--<li class="bl-article-item bl-tag-original">-->
+                <!--<a class="bl-title" target="_self" href="">Web安全之SQL注入攻击技巧与防范</a>-->
+                <!--<span class="bl-datetime">2017-02-18 10:19:08</span>-->
+            <!--</li>-->
+            <!--<li class="bl-article-item bl-tag-reproduce">-->
+                <!--<a class="bl-title" target="_self" href="">使用Node.js+Socket.IO搭建WebSocket实时应用</a>-->
+                <!--<span class="bl-datetime">2017-02-17 12:19:08</span>-->
+            <!--</li>-->
+        </ul>
+        <nav aria-label="Page navigation" class="page-num">
+            <!--<ul class="pagination">-->
+                <!--<li>-->
+                    <!--<a href="#" aria-label="Previous">-->
+                        <!--<span aria-hidden="true">«</span>-->
+                    <!--</a>-->
+                <!--</li>-->
+                <!--<li><a href="#">1</a></li>-->
+                <!--<li><a href="#">2</a></li>-->
+                <!--<li><a href="#">3</a></li>-->
+                <!--<li><a href="#">4</a></li>-->
+                <!--<li><a href="#">5</a></li>-->
+                <!--<li>-->
+                    <!--<a href="#" aria-label="Next">-->
+                        <!--<span aria-hidden="true">»</span>-->
+                    <!--</a>-->
+                <!--</li>-->
+            <!--</ul>-->
+        </nav>
+    </script>
+    <script type="text/template" id="article-page-list-item">
+        <a class="bl-title <%= className %>" target="_self" href="">
+            <%= title %>
+        </a>
+        <span class="bl-datetime"><%= datetime %></span>
+    </script>
+
+    <!---Resume ---->
+    <script type="text/template" id="resume-page">
+        <h3>施旺旺的简历</h3>
+        <div id="resumeContainer">
+            <div id="resumeContainer_left" class="text-center">
+                <img src="http://localhost/Shiwang.wang//tpl/assets/image/zjz.jpg" class="rc-avatar">
+                <p class="resume-block text-left"><i class="fa fa-bookmark"></i>Contact. 联系方式</p>
+                <table class="resume-table resume-table-contact">
+                    <tbody><tr>
+                        <td><i class="fa fa-envelope"></i></td>
+                        <td>Email</td>
+                        <td><a href="mailto:sa612250@mail.ustc.edu.cn" target="_blank">sa612250@mail.ustc.edu.cn</a></td>
+                    </tr>
+                    <tr>
+                        <td><i class="fa fa-wechat"></i></td>
+                        <td><span style="letter-spacing: 2px;">微信</span></td>
+                        <td>hsshiwangwang</td>
+                    </tr>
+                    <tr>
+                        <td><i class="fa fa-qq"></i></td>
+                        <td><span style="letter-spacing: 4px;">QQ</span></td>
+                        <td>287841605</td>
+                    </tr>
+                    <tr>
+                        <td><i class="fa fa-phone"></i></td>
+                        <td><span style="letter-spacing: 2px;">手机</span></td>
+                        <td>176 8129 0308</td>
+                    </tr>
+                    </tbody></table>
+                <p class="resume-block text-left"><i class="fa fa-bookmark"></i>Position. 职位</p>
+                <p class="resume-text">前端工程师</p>
+                <p class="resume-block text-left"><i class="fa fa-bookmark"></i>Skills. 技能</p>
+                <table class="resume-table resume-table-skills">
+                    <tbody><tr>
+                        <td>JavaScript</td>
+                        <td><div class="skill-bar-wrap" title="82%"><div class="skill-bar" style="width:82%;"></div></div></td>
+                    </tr>
+                    <tr>
+                        <td>HTML5</td>
+                        <td><div class="skill-bar-wrap" title="80%"><div class="skill-bar" style="width:80%;"></div></div></td>
+                    </tr>
+                    <tr>
+                        <td>PHP</td>
+                        <td><div class="skill-bar-wrap" title="70%"><div class="skill-bar" style="width:70%;"></div></div></td>
+                    </tr>
+                    <tr>
+                        <td>Java</td>
+                        <td><div class="skill-bar-wrap" title="50%"><div class="skill-bar" style="width:50%;"></div></div></td>
+                    </tr>
+                    <tr>
+                        <td>C#</td>
+                        <td><div class="skill-bar-wrap" title="68%"><div class="skill-bar" style="width:68%;"></div></div></td>
+                    </tr>
+                    <tr>
+                        <td>C/C++</td>
+                        <td><div class="skill-bar-wrap" title="56%"><div class="skill-bar" style="width:56%;"></div></div></td>
+                    </tr>
+                    <tr>
+                        <td>PhotoShop</td>
+                        <td><div class="skill-bar-wrap" title="60%"><div class="skill-bar" style="width:60%;"></div></div></td>
+                    </tr>
+                    </tbody></table>
+            </div>
+            <div id="resumeContainer_right">
+                <p class="resumt-block-r"><i class="fa fa-reorder"></i>Basic Info. 基本信息<i class="fa fa-caret-down js-btn float-r"></i></p>
+                <table class="resume-table resume-table-info">
+                    <tbody><tr>
+                        <td>个人信息</td>
+                        <td>David / 施旺旺 / 28岁</td>
+                    </tr>
+                    <tr>
+                        <td>籍贯</td>
+                        <td>安徽黄山</td>
+                    </tr>
+                    <tr>
+                        <td>学历</td>
+                        <td>东北大学 本科 测控技术与仪器</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>中国科学技术大学 硕士研究生 软件工程</td>
+                    </tr>
+                    <tr>
+                        <td>主页地址</td>
+                        <td><a href="http://shiwang.wang" target="_blank">http://shiwang.wang</a></td>
+                    </tr>
+                    <tr>
+                        <td>GitHub</td>
+                        <td><a href="https://github.com/David-Shi-1989" target="_blank">https://github.com/David-Shi-1989</a></td>
+                    </tr>
+                    </tbody></table>
+                <p class="resumt-block-r"><i class="fa fa-briefcase"></i>
+                    Experience. 工作与项目经验
+                    <i class="fa fa-caret-down js-btn float-r" data-toggle="collapse" href="#resume_page_collapse_1"></i>
+                </p>
+                <ul class="ul-timeline" id="resume_page_collapse_1">
+                    <li>
+                        <div class="ul-timeline-circle"></div>
+                        <h4>柯达Kodak(中国)投资有限公司 软件开发工程师</h4>
+                        <p class="ul-timeline-date">2013年7月14日 — 2016年7月20日</p>
+                        <p class="ul-timeline-text">参与国内外知名印刷拼板软件Preps的开发与维护，主要技术WPF、C++、C#。</p>
+                        <p class="ul-timeline-text">参与公司PDF流程审阅系统Insite的前端开发与维护，主要技术Backbone,TypeScript。</p>
+                        <p class="ul-timeline-text">参与公司印能捷系统Prinergy的开发与维护，主要技术Java,...。</p>
+                    </li>
+                    <li>
+                        <div class="ul-timeline-circle"></div>
+                        <h4>屯溪农村商业银行 科技部</h4>
+                        <p class="ul-timeline-date">2016年7月28日 — 至今</p>
+                        <p class="ul-timeline-text">参与行内手机银行项目的建设。</p>
+                    </li>
+                </ul>
+                <p class="resumt-block-r"><i class="fa fa-cube"></i>Product. 我的作品<i class="fa fa-caret-down js-btn float-r"></i></p>
+                <ul class="ul-timeline">
+                    <li>
+                        <div class="ul-timeline-circle"></div>
+                        <h4>微信公众号开发</h4>
+                        <p class="ul-timeline-date">2015年10月 — 至今</p>
+                        <p class="ul-timeline-text">参与微信公众号宣传广告页面的设计与实现。</p>
+                        <p class="ul-timeline-text">微信公众号的开发,包括用户会员管理、积分消费、自动应答等功能。</p>
+                    </li>
+                    <li>
+                        <div class="ul-timeline-circle"></div>
+                        <h4>代码高亮插件HTMLCodeLight</h4>
+                        <p class="ul-timeline-date">2016年2月</p>
+                        <p class="ul-timeline-text">前端代码，即HTML、JavaScript、css代码高亮。</p>
+                    </li>
+                </ul>
+                <p class="resumt-block-r"><i class="fa fa-tasks"></i>Skills. 技能清单<i class="fa fa-caret-down js-btn float-r"></i></p>
+                <h3>前端</h3>
+                <ul class="ul-timeline">
+                    <li>
+                        <div class="ul-timeline-circle"></div>
+                        <h4>HTML / CSS</h4>
+                        <p class="ul-timeline-text">能够编写语义化的 HTML，模块化的 CSS，完成较复杂的布局</p>
+                        <p class="ul-timeline-text">熟悉 Less / Sass / Autoprefixer 等CSS预处理和后处理方法、工具</p>
+                    </li>
+                    <li>
+                        <div class="ul-timeline-circle"></div>
+                        <h4>JavaScript</h4>
+                        <p class="ul-timeline-text">熟悉原生Javascript，能脱离jQuery等类库编码</p>
+                        <p class="ul-timeline-text">能运用模块化、面向对象的方式编程</p>
+                        <p class="ul-timeline-text">了解jQuery、Backbone 的使用</p>
+                    </li>
+                    <li>
+                        <div class="ul-timeline-circle"></div>
+                        <h4>其他</h4>
+                        <p class="ul-timeline-text">熟悉 Yeoman Bower Grunt Gulp 前端自动化工具</p>
+                        <p class="ul-timeline-text">了解 Apache Nginx web服务器，一年多建站经验</p>
+                    </li>
+                </ul>
+                <h3>后端</h3>
+                <ul class="ul-timeline">
+                    <li>
+                        <div class="ul-timeline-circle"></div>
+                        <h4>环境</h4>
+                        <p class="ul-timeline-text">熟悉 Linux 开发环境、 Linux 服务器环境搭建部署，两年 Linux 日常使用经验</p>
+                        <p class="ul-timeline-text">了解 Apache Nginx web服务器，一年多建站经验</p>
+                        <p class="ul-timeline-text">掌握ThinkPHP框架，有建站经验</p>
+                    </li>
+                    <li>
+                        <div class="ul-timeline-circle"></div>
+                        <h4>语言</h4>
+                        <p class="ul-timeline-text">了解 Python，能够实现简单的爬虫、数据及图像处理工具、自动化脚本</p>
+                        <p class="ul-timeline-text">了解PHP，能够进行简单的面向对象及后台数据操作</p>
+                        <p class="ul-timeline-text">了解 Java，能进行简单的网络编程和多线程编程</p>
+                    </li>
+                    <li>
+                        <div class="ul-timeline-circle"></div>
+                        <h4>其他</h4>
+                        <p class="ul-timeline-text">。。。</p>
+                        <p class="ul-timeline-text">。。。</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="clr"></div>
+        </div>
+    </script>
+
+    <!---Product ---->
+    <script type="text/template" id="product-page">
+        <h3>作品列表</h3>
+        <div id="demoContainer" class="row">
+            <!--<div class="col-lg-4 col-md-4 col-sm-6">-->
+                <!--<a href="" target="_blank" class="cover-img">-->
+                    <!--<img src="assets/image/demos/bootstrapValidator.png">-->
+                    <!--<span class="cover-des">基于BootStrap的表单验证,支持自定义正则验证及Ajax验证。</span>-->
+                <!--</a>-->
+                <!--<div class="cover-info">-->
+                    <!--<a href="" target="_blank"><h5>BootStrap Validator</h5></a>-->
+                <!--</div>-->
+                <!--<div class="cover-static">-->
+                    <!--<div>-->
+                        <!--<span>1</span>-->
+                    <!--</div>-->
+                    <!--<div>-->
+                        <!--<i class="fa fa-eye"></i><span>3</span>-->
+                        <!--<i class="fa fa-heart"></i><span>0</span>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="col-lg-4 col-md-4 col-sm-6">-->
+            <!--<a href="" target="_blank" class="cover-img">-->
+                <!--<img src="assets/image/demos/routerSearch.png">-->
+                <!--<span class="cover-des">基于A*算法的自动寻路AI。</span>-->
+            <!--</a>-->
+            <!--<div class="cover-info">-->
+                <!--<a href="" target="_blank"><h5>自动寻路算法</h5></a>-->
+            <!--</div>-->
+            <!--<div class="cover-static">-->
+                <!--<div>-->
+                    <!--<span>2</span>-->
+                <!--</div>-->
+                <!--<div>-->
+                    <!--<i class="fa fa-eye"></i><span>1</span>-->
+                    <!--<i class="fa fa-heart"></i><span>0</span>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+            <!--<div class="col-lg-4 col-md-4 col-sm-6">-->
+            <!--<a href="" target="_blank" class="cover-img">-->
+                <!--<img src="assets/image/demos/ligthcode-1.png">-->
+                <!--<span class="cover-des">读取HTML代码，采用树形结构构造标签。最终输出带样式的HTML代码。常用于博客代码展示。</span>-->
+            <!--</a>-->
+            <!--<div class="cover-info">-->
+                <!--<a href="" target="_blank"><h5>HTML代码高亮</h5></a>-->
+            <!--</div>-->
+            <!--<div class="cover-static">-->
+                <!--<div>-->
+                    <!--<span>3</span>-->
+                <!--</div>-->
+                <!--<div>-->
+                    <!--<i class="fa fa-eye"></i><span>7</span>-->
+                    <!--<i class="fa fa-heart"></i><span>0</span>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div><div class="col-lg-4 col-md-4 col-sm-6">-->
+            <!--<a href="" target="_blank" class="cover-img">-->
+                <!--<img src="assets/image/demos/richText.png">-->
+                <!--<span class="cover-des">富文本多信息采集</span>-->
+            <!--</a>-->
+            <!--<div class="cover-info">-->
+                <!--<a href="" target="_blank"><h5>富文本采集</h5></a>-->
+            <!--</div>-->
+            <!--<div class="cover-static">-->
+                <!--<div>-->
+                    <!--<span>4</span>-->
+                <!--</div>-->
+                <!--<div>-->
+                    <!--<i class="fa fa-eye"></i><span>3</span>-->
+                    <!--<i class="fa fa-heart"></i><span>0</span>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div><div class="col-lg-4 col-md-4 col-sm-6">-->
+            <!--<a href="" target="_blank" class="cover-img">-->
+                <!--<img src="assets/image/demos/backbone.stock.png">-->
+                <!--<span class="cover-des">基于Backbone英文文档结构,将联系人app改写成股票app。同时结合使用Marionette.backbone.js MVC开发模式。</span>-->
+            <!--</a>-->
+            <!--<div class="cover-info">-->
+                <!--<a href="" target="_blank"><h5>Backbone.js教程翻译</h5></a>-->
+            <!--</div>-->
+            <!--<div class="cover-static">-->
+                <!--<div>-->
+                    <!--<span>5</span>-->
+                <!--</div>-->
+                <!--<div>-->
+                    <!--<i class="fa fa-eye"></i><span>35</span>-->
+                    <!--<i class="fa fa-heart"></i><span>0</span>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>            -->
+        </div>
+        <nav aria-label="Page navigation" class="page-num">
+            <ul class="pagination">
+                <li>
+                    <a href="#" aria-label="Previous">
+                        <span aria-hidden="true">«</span>
+                    </a>
+                </li>
+                <li><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li>
+                    <a href="#" aria-label="Next">
+                        <span aria-hidden="true">»</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </script>
+
+    <script type="text/template" id="product-page-item">
+        <a href="" target="_blank" class="cover-img">
+            <img src="<%= image %>">
+            <span class="cover-des"><%= notes %></span>
+        </a>
+        <div class="cover-info">
+            <a href="" target="_blank"><h5><%= title %></h5></a>
+        </div>
+        <div class="cover-static">
+            <div>
+                <span><%= id %></span>
+            </div>
+            <div>
+                <i class="fa fa-eye"></i><span><%= view %></span>
+                <i class="fa fa-heart"></i><span><%= like %></span>
+            </div>
+        </div>
+    </script>
+
+    <!---Album ---->
+    <script type="text/template" id="album-page-list">
+        <h3>我的照片</h3>
+        <div id="imageContainerWrapper">
+
+        </div>
+        <nav aria-label="Page navigation" class="page-num">
+            <ul class="pagination">
+                <li>
+                    <a href="#" aria-label="Previous">
+                        <span aria-hidden="true">«</span>
+                    </a>
+                </li>
+                <li><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li>
+                    <a href="#" aria-label="Next">
+                        <span aria-hidden="true">»</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </script>
+
+    <script type="text/template" id="album-page-list-item">
+        <div class="image-item-imageWrapper"><img src="<%= image %>"></div>
+        <div class="image-item-des">
+            <a target="_self"><%= title %></a>
+            <ul>
+                <li>
+                    <span>创建时间</span>
+                    <span><%= datetime %></span>
+                </li>
+                <li>
+                    <span>相册大小</span>
+                    <span><%= size %>p</span>
+                </li>
+                <li>
+                    <span>相册说明</span>
+                    <span class="overflow-ellipsis"><%= des %></span>
+                </li>
+            </ul>
+        </div>
+        <div class="clr"></div>
+    </script>
+
+    <!---Right Menu---->
+    <script type="text/template" id="rightmenu-menus-view">
+    </script>
+    <script type="text/template" id="rightmenu-menuitem-view">
+        <span data-id="<%= id %>"><i class="<%= icon %>"></i><%= title %></span>
+    </script>
+<script type="text/javascript">
+    BlogAppManager.start();
+</script>
+</body>
+</html>

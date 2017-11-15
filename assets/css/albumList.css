@@ -1,0 +1,75 @@
+#main_left h3{
+    margin-bottom: 0px;
+}
+#imageContainer{
+    list-style: none;
+    margin-bottom:50px;
+}
+#imageContainer li.album-item{
+    padding:10px 20px;
+    border-bottom:1px dashed #EEE;
+}
+#imageContainer li.album-item div.image-item-imageWrapper {
+    width: 130px;
+    overflow: hidden;
+    display: inline-block;
+    float: left;
+    border: 1px solid #EEEEEE;
+}
+#imageContainer li.album-item div.image-item-imageWrapper img{
+    width:100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border:6px solid #FFF;
+    box-shadow: 1px 1px 1px 1px #BBB;
+    opacity:0.8;
+    cursor: pointer;
+    transition:opacity 0.7s;
+}
+#imageContainer li.album-item img:hover{
+    opacity:1;
+}
+#imageContainer li.album-item .image-item-des{
+    display: inline-block;
+    height: 100px;
+    float: left;
+    width:400px;
+    margin-left:20px;
+}
+#imageContainer li.album-item .image-item-des a{
+    text-decoration: none;
+    color:#444;
+    font-size:20px;
+    font-weight:bolder;
+    margin-bottom:2px;
+    display: inline-block;
+    cursor: pointer;
+}
+#imageContainer li.album-item .image-item-des a:hover{
+    text-decoration: underline;
+}
+
+#imageContainer li.album-item .image-item-des ul{
+    font-size: 10px;
+    width:100%;
+}
+#imageContainer li.album-item .image-item-des ul > li{
+    margin-bottom:2px;
+}
+#imageContainer li.album-item .image-item-des ul span{
+    display: inline-block;
+    vertical-align: top;
+}
+#imageContainer li.album-item .image-item-des ul li span:first-child{
+    width:20%;
+    color:#CCC;
+}
+#imageContainer li.album-item .image-item-des ul li span:first-child:after{
+    content: ":";
+    margin-left:2px;
+}
+#imageContainer li.album-item .image-item-des ul li span:last-child{
+    width:75%;
+    color:#999;
+}

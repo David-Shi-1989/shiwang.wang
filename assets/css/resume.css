@@ -1,0 +1,132 @@
+#resumeContainer{
+    width:100%;
+}
+/****************************
+*       left
+*****************************/
+#resumeContainer_left{
+    width:30%;
+    float: left;
+}
+#resumeContainer_left .rc-avatar{
+    width:100px;
+}
+p.resume-block{
+    color:#00796b;
+    font-size:17px;
+    margin:20px 0 0 0;
+}
+p.resume-block i{
+    margin-right:5px;
+}
+table.resume-table{
+    font-size:10px;
+    border:0;
+    margin-top:5px;
+    color:#444;
+}
+.resume-text{
+    color:#444;
+    font-size:14px;
+    text-align: left;
+    padding-left:15px;
+}
+table.resume-table.resume-table-contact tr td:first-child{
+    width:15%;
+    text-align: right;
+}
+table.resume-table.resume-table-contact tr td:nth-child(2){
+    width:15%;
+    text-align: right;
+    padding-left:10px;
+}
+table.resume-table.resume-table-contact tr td:nth-child(2):after{
+    content:':';
+}
+table.resume-table.resume-table-contact tr td:nth-child(3){
+    width:70%;
+    text-align: left;
+    padding-left:10px;
+}
+table.resume-table i{
+    margin-right:5px;
+}
+table.resume-table a{
+    text-decoration: none;
+    color:#444;
+}
+table.resume-table a:hover{
+    text-decoration: underline;
+}
+
+.resume-table.resume-table-skills{
+    margin-left:15px;
+    width:80%;
+}
+.resume-table.resume-table-skills tr td:first-child{
+    width:30%;
+    text-align: left;
+}
+.resume-table.resume-table-skills tr td:last-child{
+    width:70%;
+    text-align: right;
+}
+/****************************
+*       right
+*****************************/
+#resumeContainer_right{
+    width:70%;
+    float: left;
+    padding-left:10px;
+    border-left:1px solid #CCCCCC;
+}
+#resumeContainer_right h3{
+    border:0;
+    color:#004d40;
+    font-size:18px;
+    font-weight: bolder;
+}
+#resumeContainer_right table,#resumeContainer_right ul{
+    position: relative;
+}
+p.resumt-block-r{
+    font-size:20px;
+    color:#444;
+    border-bottom:1px double #EFEFEF;
+    margin-top:20px;
+    position: relative;
+}
+#resumeContainer_right p.resumt-block-r:first-child{margin-top:0;}
+p.resumt-block-r i{
+    margin-right:10px;
+}
+table.resume-table.resume-table-info{
+    font-size:14px;
+    width:100%;
+}
+table.resume-table.resume-table-info tr td:first-child{
+    font-weight: bolder;
+    width:20%;
+    text-align: right;
+}
+table.resume-table.resume-table-info tr td:last-child{
+    width:80%;
+    padding-left:20px;
+    text-align: left;
+}
+.ul-timeline h4{
+    font-weight:bolder;
+    margin-bottom:2px;
+    font-size:15px;
+}
+.ul-timeline p{
+    margin:0 0 4px 0;
+}
+.ul-timeline p.ul-timeline-date{
+    font-size:8px;
+    color:#BCBCBC;
+}
+.ul-timeline p.ul-timeline-text{
+    font-size:13px;
+    color:#555;
+}
