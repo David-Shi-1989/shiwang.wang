@@ -1,0 +1,132 @@
+html,body{
+    background-image: url("../image/debut_light.png");
+}
+/**article-title**/
+#articleList > li a.article-title{
+    position: relative;
+    display: inline-block;
+    text-align: left;
+    line-height: 2;
+    text-decoration:none;
+    font-size:1.5em;
+    color:#222;
+    font-weight:bolder;
+    word-wrap:break-word;
+    cursor:pointer;
+    transition:color 0.6s;
+}
+/**article-info**/
+#articleList > li div.article-info{
+    padding-top:5px;
+    border-top:1px solid #CCCCCC;
+}
+#articleList > li div.article-info > span,#articleList > li div.article-info > a{
+    font-size:0.8em;
+    color:#999;
+}
+#articleList > li div.article-info > a.article-tag-original{
+    padding:1px 3px;
+    font-size:10px;
+    cursor: pointer;
+    transition:color 0.6s;
+    background-color:#c77d7b;
+    color:#FFF;
+    transition:background-color 1s;
+    border-radius: 3px;
+}
+#articleList > li div.article-info > a.article-tag-original:before{
+    content: '原创';
+    color:#FFF;
+    font-size:10px;
+    transform-origin:50% 50%;
+    -webkit-transform-origin: 50% 50%;
+    transform: scale(0.6);
+    -webkit-transform: scale(0.6);
+}
+#articleList > li div.article-info > a.article-tag-original:hover{
+    background-color: #d9544f;
+    text-decoration: none;
+}
+#articleList > li div.article-info > a.article-tag-reproduce{
+    padding:2px 4px;
+    font-size:0.8em;
+    cursor: pointer;
+    transition:color 0.6s;
+    color:#777;
+    border:1px solid #CCC;
+}
+#articleList > li div.article-info > a.article-tag-reproduce:before{
+    content:"转载";
+}
+#articleList > li div.article-info > a.article-tag-reproduce:hover{
+    text-decoration: none;
+    color:#444;
+}
+#articleList > li div.article-info > span.article-tag-datetime{
+    margin:0 10px 0 20px;
+    font-size:12px;
+}
+#articleList > li div.article-info > span.article-tag-author{
+    margin:0 10px;
+}
+#articleList > li div.article-info > a.article-tag-tag{
+    cursor: pointer;
+    margin:0 3px;
+}
+#articleList > li div.article-info > a.article-tag-tag:first-child{
+    margin-left:10px;
+}
+#articleList > li div.article-info > a.article-tag-tag:last-child{
+    margin-right:10px;
+}
+#articleList > li div.article-info > a.article-tag-tag:hover{
+    color:#607fa6;
+}
+#articleList > li div.article-info > a.article-tag-tag i{
+    margin-right:3px;
+}
+/**article-content**/
+#articleList > li div.article-content{
+
+}
+#articleList > li div.article-content p{
+    padding:10px 0 10px 0;
+    color:#777;
+    text-indent:2em;
+    letter-spacing: 1px;
+}
+#articleList > li div.article-content p:after{
+    content: '...';
+    margin-left:5px;
+    color:#CCC;
+}
+#articleList > li a.article-btn-readmore{
+    display: block;
+    float: right;
+    color:#888;
+    font-size:0.8em;
+    cursor: pointer;
+    padding:2px;
+    border:1px dashed #888;
+    border-radius:3px;
+    text-decoration: none;
+    transition:color,border 1s;
+}
+#articleList > li a.article-btn-readmore:hover{
+    color:#111;
+    border:1px solid #888;
+}
+#articleList > li .article-tag-views{
+    margin-right:10px;
+}
+#articleList > li .article-tag-comments{
+
+}
+
+.smallfont{
+    font-size:12px;
+    transform-origin: 0;
+    -webkit-transform-origin: 0;
+    transform: scale(0.5);
+    -webkit-transform: scale(0.5);
+}
