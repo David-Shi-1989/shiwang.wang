@@ -7,9 +7,11 @@
 #resumeContainer_left{
     width:30%;
     float: left;
+    text-align: left;
 }
 #resumeContainer_left .rc-avatar{
     width:100px;
+    margin-top:5px;
 }
 p.resume-block{
     color:#00796b;

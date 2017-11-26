@@ -11,6 +11,7 @@
     <link rel="stylesheet" type="text/css" href="assets/css/resume.css">
     <link rel="stylesheet" type="text/css" href="assets/css/productList.css">
     <link rel="stylesheet" type="text/css" href="assets/css/albumList.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/albumItem.css">
     <script type="text/javascript" src="assets/js/vendor/jquery-1.10.2.min.js"></script>
     <script type="text/javascript" src="assets/js/vendor/json2.js"></script>
     <script type="text/javascript" src="assets/js/vendor/underscore-min.js"></script>
@@ -40,6 +41,9 @@
     <script type="text/javascript" src="assets/js/entities/album.js"></script>
     <script type="text/javascript" src="assets/js/list/album_list.js"></script>
     <script type="text/javascript" src="assets/js/controller/album_list.js"></script>
+
+    <script type="text/javascript" src="assets/js/list/show_album.js"></script>
+    <script type="text/javascript" src="assets/js/controller/show_album.js"></script>
 
     <title>施旺旺的主页</title>
 </head>
@@ -563,6 +567,36 @@
             </ul>
         </div>
         <div class="clr"></div>
+    </script>
+
+    <script type="text/template" id="album-pate-item">
+        <h3>相册</h3>
+        <div id="imagesContainer">
+            <div class="imageWrapper" data-index="1">
+                <img src="/Shiwang.wang/tpl/assets/image/1.jpg" style="width: 200px; margin-left: 0px; display: inline;">
+            </div>
+            <div class="imageWrapper" data-index="2">
+                <img src="/Shiwang.wang/tpl/assets/image/2.jpg" style="width: 200px; margin-left: 0px; display: inline;">
+            </div>
+            <div class="imageWrapper" data-index="3">
+                <img src="/Shiwang.wang/tpl/assets/image/3.jpg" style="width: 200px; margin-left: 0px; display: inline;">
+            </div>
+            <div class="imageWrapper" data-index="4">
+                <img src="/Shiwang.wang/tpl/assets/image/4.jpg" style="width: 200px; margin-left: 0px; display: inline;">
+            </div>
+            <div class="imageWrapper" data-index="5">
+                <img src="/Shiwang.wang/tpl/assets/image/5.jpg" style="width: 200px; margin-left: 0px; display: inline;">
+            </div>
+            <div class="imageWrapper" data-index="6">
+                <img src="/Shiwang.wang/tpl/assets/image/6.jpg" style="width: 200px; margin-left: 0px; display: inline;">
+            </div>
+            <div class="imageWrapper" data-index="7">
+                <img src="/Shiwang.wang/tpl/assets/image/7.jpg" style="width: 200px; margin-left: 0px; display: inline;">
+            </div>
+            <div class="imageWrapper" data-index="8">
+                <img src="/Shiwang.wang/tpl/assets/image/8.jpg" style="width: 200px; margin-left: 0px; display: inline;">
+            </div>
+        </div>
     </script>
 
     <!---Right Menu---->

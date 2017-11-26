@@ -8,7 +8,8 @@ BlogAppManager.module("BlogApp",function (BlogApp,BlogAppManager,Backbone,Marion
             "album":"listAlbum",
             "message":"listMessage",
 
-            "article/:id":"showArticleById"
+            "article/:id":"showArticleById",
+            "album/:id":"showAlbumById"
         }
     });
 
@@ -36,6 +37,9 @@ BlogAppManager.module("BlogApp",function (BlogApp,BlogAppManager,Backbone,Marion
 
         showArticleById:function (id) {
             BlogAppManager.Controller.showArticle.showArticleById(this.model);
+        },
+        showAlbumById:function (id) {
+            BlogAppManager.Controller.showAlbum.showAlbumById(this.model);
         }
     };
 
