@@ -9,6 +9,14 @@ BlogAppManager.module("Entities",function (Entities,BlogAppManager,Backbone,Mari
         model:Entities.AlbumListModel
     });
 
+    Entities.AlbumItemMode = Backbone.Model.extend({
+
+    });
+
+    Entities.AlbumItemCollection = Backbone.Collection.extend({
+        model:Entities.AlbumItemMode
+    });
+
     var albumList;
 
     var initializeAlbumList = function () {
@@ -56,16 +64,51 @@ BlogAppManager.module("Entities",function (Entities,BlogAppManager,Backbone,Mari
         ]);
     };
 
+    var getAlbumImagesById = function () {
+        return new Entities.AlbumItemCollection([
+            {
+                id:1,
+                imageurl:"assets/image/ablum/1.jpg"
+            },
+            {
+                id:2,
+                imageurl:"assets/image/ablum/2.jpg"
+            },
+            {
+                id:3,
+                imageurl:"assets/image/ablum/3.jpg"
+            },
+            {
+                id:4,
+                imageurl:"assets/image/ablum/4.jpg"
+            },
+            {
+                id:5,
+                imageurl:"assets/image/ablum/5.jpg"
+            }
+        ]);
+    };
+
     var API = {
         getAlbumList:function () {
             if(albumList == undefined){
                 initializeAlbumList();
             }
             return albumList;
+        },
+        getAlbumItemsById:function (id) {
+            if(!isNaN(id)){
+                return getAlbumImagesById(id);
+            }else{
+                throw ("Invalid Album Id:"+id);
+            }
         }
     };
 
     BlogAppManager.reqres.setHandler("albumlist:entities",function () {
         return API.getAlbumList();
+    });
+    BlogAppManager.reqres.setHandler("albumitems:entities",function (id) {
+        return API.getAlbumItemsById(id);
     });
 });

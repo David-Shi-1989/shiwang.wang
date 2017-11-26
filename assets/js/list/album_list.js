@@ -13,7 +13,7 @@ BlogAppManager.module("List",function (List,BlogAppManager,Backbone,Marionette,$
                 evt.stopPropagation();
             }
             BlogAppManager.navigate("album/"+this.model.get("id"));
-            BlogAppManager.Controller.showAlbum.showAlbumById(this.model);
+            BlogAppManager.Controller.showAlbum.showAlbumById(this.model.get("id"));
         }
     });
 

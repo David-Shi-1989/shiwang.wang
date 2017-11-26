@@ -1,5 +1,6 @@
 #imagesContainer{
-    width:100%
+    width:100%;
+    margin:10px 0;
 }
 #imagesContainer div.imageWrapper{
     width:200px;
@@ -19,7 +20,9 @@
     box-shadow: 1px 1px 1px 1px #CCC;
 }
 #imagesContainer div.imageWrapper img{
-
+    width:200px;
+    display: inline;
+    margin-left: 0;
 }
 .fake-layer-content .switch-btn{
     display: inline-block;

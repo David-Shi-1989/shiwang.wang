@@ -39,7 +39,7 @@ BlogAppManager.module("BlogApp",function (BlogApp,BlogAppManager,Backbone,Marion
             BlogAppManager.Controller.showArticle.showArticleById(this.model);
         },
         showAlbumById:function (id) {
-            BlogAppManager.Controller.showAlbum.showAlbumById(this.model);
+            BlogAppManager.Controller.showAlbum.showAlbumById(id);
         }
     };
 
