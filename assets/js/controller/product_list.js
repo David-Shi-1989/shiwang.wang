@@ -8,6 +8,13 @@ BlogAppManager.module("Controller",function (Controller,BlogAppManager,Backbone,
 
             BlogAppManager.mainRegion.show(productListView);
             BlogAppManager.trigger("menu:select:4");
+        },
+        showProduct:function (productId,model) {
+            var model = model || BlogAppManager.request("product:entities",productId);
+            BlogAppManager.navigate("product/"+productId);
+            var showProductView = new BlogAppManager.List.ShowProduct({model:model});
+            BlogAppManager.mainRegion.show(showProductView);
+            BlogAppManager.trigger("menu:select:4");
         }
     }
 });

@@ -9,7 +9,8 @@ BlogAppManager.module("BlogApp",function (BlogApp,BlogAppManager,Backbone,Marion
             "message":"listMessage",
 
             "article/:id":"showArticleById",
-            "album/:id":"showAlbumById"
+            "album/:id":"showAlbumById",
+            "product/:id":"showProductById"
         }
     });
 
@@ -40,7 +41,10 @@ BlogAppManager.module("BlogApp",function (BlogApp,BlogAppManager,Backbone,Marion
         },
         showAlbumById:function (id) {
             BlogAppManager.Controller.showAlbum.showAlbumById(id);
-        }
+        },
+        showProductById:function (id) {
+            BlogAppManager.Controller.Product.showProduct(id);
+        },
     };
 
     //main menu

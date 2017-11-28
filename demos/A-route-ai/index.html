@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>寻路算法</title>
+    <style type="text/css">
+        *{margin:0;padding:0;}
+        .clr{clear:both;}
+        #box{
+            height: auto;
+            overflow: hidden;
+            margin:40px auto 30px auto;
+            border:1px solid #000;
+            border-right: none;
+            border-bottom:none;
+        }
+        #box li{
+            border:1px solid #000;
+            border-top:none;
+            border-left: none;
+            float: left;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            cursor: pointer;
+        }
+        #box li:hover{
+            background-color:#ddd;
+        }
+        li {
+            list-style-type: none;
+        }
+        #box li.start { background:red;}
+        #box li.end { background:yellow;}
+        #box li.obst { background:blue;}
+        #box li.path { background:silver;}
+
+
+        input{display:block;margin:0 auto;}
+        #radioPanel{
+            width:60%;
+            margin:0 auto;
+        }
+        #radioPanel > div{
+            display:block;
+        }
+        #radioPanel > div input,#radioPanel > div label{
+            float: left;
+        }
+    </style>
+    <script type="text/javascript" src="../../assets/js/vendor/jquery-1.10.2.min.js"></script>
+</head>
+<body>
+<ul id="box">
+
+</ul>
+<input type="submit" value="自动寻路" id="btn_begin">
+<div id="radioPanel">
+    <div><input type="radio" name="ObjType" value="无" id="radio_g1_e1" checked><label for="radio_g1_e1">无</label></div>
+    <div><input type="radio" name="ObjType" value="起点" id="radio_g1_e2"><label for="radio_g1_e2">起点</label></div>
+    <div><input type="radio" name="ObjType" value="终点" id="radio_g1_e3"><label for="radio_g1_e3">终点</label></div>
+    <div><input type="radio" name="ObjType" value="障碍物" id="radio_g1_e4"><label for="radio_g1_e4">障碍物</label></div>
+</div>
+<script type="text/javascript">
+    var $box = $("#box");
+    var aLi = box.getElementsByTagName("li");
+    $btn = $("#btn_begin");
+    var size = 20,cols = 20;
+    var openPosObjArr = [],closePosObjArr = [];
+    var openIndexArr = [],closeIndexArr = [];
+    var map = [
+        0,0,0,0,-1,0,0,0,0,-1,0,0,0,0,0,0,0,0,0,0,
+        0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,-1,0,0,0,0,
+        0,0,0,0,0,-1,0,0,-1,1,0,0,0,0,0,0,0,0,0,0,
+        0,0,0,0,0,0,0,-1,0,0,0,0,0,0,0,0,0,-1,0,0,
+        0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+        0,0,0,0,0,0,0,-1,0,0,0,0,0,0,0,0,0,0,0,0,
+        0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,-1,0,0,
+        0,0,0,0,0,0,0,0,0,0,-1,0,0,-1,0,0,0,0,0,0,
+        0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+        0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+        0,0,0,0,0,0,-1,0,-1,0,0,0,-1,0,0,0,0,0,0,0,
+        0,0,0,0,0,0,0,-1,0,0,0,-1,0,0,0,0,0,0,0,0,
+        0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,-1,0,0,0,
+        0,0,0,-1,0,0,-1,0,-1,0,0,0,0,0,0,0,0,0,0,0,
+        0,0,0,2,0,-1,0,0,0,0,0,0,0,0,0,0,-1,-1,0,0,
+        0,0,-1,0,0,0,-1,0,0,-1,0,0,0,0,0,0,0,0,0,0,
+        0,0,0,0,0,0,0,0,-1,0,0,0,0,0,-1,0,0,0,0,0,
+        0,0,0,0,0,-1,0,0,0,0,0,0,-1,0,0,0,0,0,0,0,
+        0,0,0,0,0,0,0,0,-1,0,0,0,0,0,0,0,0,0,0,0,
+        0,0,-1,0,0,0,0,0,0,0,0,0,-1,0,0,0,0,0,0,0,
+    ];
+    var interval;
+    init();
+    function  init() {
+        createMap();
+        $btn.on("click",function () {
+            openFn();
+        });
+    }
+
+    function createMap() {
+        $box.width(cols*size);
+        for(var i=0;i<cols;i++) {
+            for (var j = 0; j < cols; j++) {
+                var index = i * cols + j, x = j + 1, y = i + 1;
+                var appendStr = '<li style="width:'+size+'px;height:'+size+'px;" onclick="onLiClick(this)'+'" ';
+                var className = "normal";
+                if (map[index] == 1) {
+                    className = "start";
+                    PushArr("openPosObjArr",{x: x, y: y});
+                } else if (map[index] == 2) {
+                    className = "end";
+                } else if (map[index] == -1) {
+                    className = "obst";
+                    PushArr("closePosObjArr",{x: x, y: y});
+                }
+                appendStr += ' class="' + className + '" data-x="' + x + '" data-y="' + y + '" ';
+                appendStr += "></li>";
+                $box.append(appendStr);
+            }
+        }
+    }
+    function onLiClick(el) {
+        if(document.getElementById("radio_g1_e1").checked){
+            //无
+        }else if(document.getElementById("radio_g1_e2").checked){
+            //起点1
+            $startLi.removeClass("start").addClass("normal");
+            setMapValue($startLi,0);
+            $startLi = $(el);
+            $startLi.removeClass("normal").removeClass("obst").removeClass("end").addClass("start");
+            setMapValue($startLi,1);
+        }else if(document.getElementById("radio_g1_e3").checked){
+            //终点2
+            $endLi?$endLi.removeClass("end").addClass("normal"):"";
+            setMapValue($endLi,0);
+            $endLi = $(el);
+            $endLi.removeClass("normal").removeClass("obst").removeClass("start").addClass("end");
+            setMapValue($endLi,2);
+        }else if(document.getElementById("radio_g1_e4").checked){
+            //障碍物-1
+            if($(el).hasClass("normal") || $(el).hasClass("start") || $(el).hasClass("end")){
+                if($(el).hasClass("start")){
+                    $startLi = null;
+                }else if($(el).hasClass("end")){
+                    $endLi = null;
+                }
+                $(el).attr("class","obst");
+                setMapValue($(el),-1);
+                PushArr("closePosObjArr",{x:$(el).data("x"),y:$(el).data("y")});
+            }else if($(el).hasClass("obst")){
+                $(el).removeClass("obst").addClass("normal");
+                setMapValue($(el),0);
+                var index = $.inArray(getElementMapIndex($(el)),closeIndexArr);
+                if(index >= 0){
+                    var arr1 = closeIndexArr.slice(0,index);
+                    var arr2 = closeIndexArr.slice(index+1,closeIndexArr.length);
+                    closeIndexArr = $.merge(arr1,arr2);
+                    arr1 = closePosObjArr.slice(0,index);
+                    arr2 = closePosObjArr.slice(index+1,closePosObjArr.length);
+                    closePosObjArr = $.merge(arr1,arr2);
+                }
+            }
+        }
+        console.log("("+$(el).data("x")+","+$(el).data("y")+")");
+    }
+    var $startLi = $($box.find(".start")[0]);
+    var $endLi = $($box.find(".end")[0]);;
+    function getElementMapIndex($el) {
+        if($el){
+            return ($el.data("y")-1)*cols + $el.data("x") - 1;
+        }
+    }
+    function setMapValue($el,value) {
+        if($el){
+            var index = ($el.data("y")-1)*cols+$el.data("x")-1;
+            if(index >= 0 && index < map.length){
+                map[index] = value;
+            }
+        }
+    }
+    function f(nodeLi) {
+        return g(nodeLi) + h(nodeLi);
+    }
+
+    function g(nodeLi) {
+        var dis_x = $startLi.data("x") - $(nodeLi).data("x");
+        var dis_y = $startLi.data("y") - $(nodeLi).data("y");
+        return Math.sqrt(dis_x*dis_x + dis_y*dis_y);
+    }
+
+    function h(nodeLi) {
+        var dis_x = $endLi.data("x") - $(nodeLi).data("x");
+        var dis_y = $endLi.data("y") - $(nodeLi).data("y");
+        return Math.sqrt(dis_x*dis_x + dis_y*dis_y);
+    }
+    function PushArr(arrName,value) {
+        if(arrName == "openPosObjArr"){
+            openPosObjArr.push(value);
+            openIndexArr.push((value.y-1)*cols+(value.x-1));
+        }else if(arrName == "closePosObjArr"){
+            closePosObjArr.push(value);
+            closeIndexArr.push((value.y-1)*cols+(value.x-1));
+        }else if(arrName == "openIndexArr"){
+            openIndexArr.push(value);
+            openPosObjArr.push(value/cols+1,value%cols + 1);
+        }else if(arrName == "closeIndexArr"){
+            closeIndexArr.push(value);
+            closePosObjArr.push(value/cols+1,value%cols + 1);
+        }
+    }
+    function getLiByPosObj(posObj) {
+        return $('#box li[data-x="'+posObj.x+'"][data-y="'+posObj.y+'"]');
+    }
+    function PopArr(arrName) {
+        var posObj = {};
+        if(arrName == "openPosObjArr"){
+            posObj = openPosObjArr.pop();
+            openIndexArr.pop();
+        }else if(arrName == "closePosObjArr"){
+            posObj = closePosObjArr.pop();
+            closeIndexArr.pop();
+        }
+        if(typeof(posObj.x) != "undefined"){
+            return getLiByPosObj(posObj);
+        }
+    }
+
+    function openFn() {
+        if(!$startLi){
+            alert("没有起点!");
+        }else if(!$endLi){
+            alert("没有终点!");
+        }else{
+            moveToNext();
+            interval = setInterval(function () {
+                moveToNext();
+            },900);
+        }
+    }
+    function moveToNext() {
+        if(!isLiEqual($startLi,$endLi)) {
+            closeFn($startLi);
+            var nextLiPosObj = lookup($startLi);
+            PushArr("openPosObjArr", {x: $startLi.data("x"), y: $startLi.data("y")});
+            $startLi = getLiByPosObj({x: nextLiPosObj.x, y: nextLiPosObj.y});
+            $startLi.removeClass("normal").addClass("path");
+        }else{
+            clearInterval(interval);
+            alert("Finished!");
+        }
+    }
+    function closeFn($newLi) {
+        //排除
+        PushArr(closePosObjArr,{x:$newLi.data("x"),y:$newLi.data("y")});
+    }
+    function lookup($newLi) {
+        var currentPos = {x:$newLi.data("x"),y:$newLi.data("y")};
+        var result = getAroundValidLi(currentPos);
+        var minValue = -1;
+        var minIndex = -1;
+        for(var i=0;i<result.length;i++){
+            if(minValue < 0 || result[i].dis < minValue){
+                minValue = result[i].dis;
+                minIndex = i;
+            }
+        }
+        return result[minIndex];
+    }
+    function getAroundValidLi(posObj) {
+        var result = [];
+        if(posObj.x && posObj.y){
+            var x = posObj.x,y=posObj.y;
+            var allLis = [
+                {x:x-1,y:y},
+                {x:x+1,y:y},
+                {x:x,y:y-1},
+                {x:x,y:y+1},
+                {x:x-1,y:y-1},
+                {x:x-1,y:y+1},
+                {x:x+1,y:y-1},
+                {x:x+1,y:y+1}
+            ];
+            $.each(allLis,function (index,posObj) {
+                var isValid = true;
+                if(posObj && posObj.x){
+                    if(posObj.x <= 0 || posObj.x >= cols || posObj.y <= 0 || posObj.y >= cols){
+                        isValid = false;
+                    }
+                    if($.inArray(((posObj.y-1)*cols+(posObj.x-1)),closeIndexArr) >= 0){
+                        isValid = false;
+                    }
+                }else{
+                    isValid = false;
+                }
+                if(isValid){
+                    result.push(posObj);
+                }
+            });
+        }else{
+            return [];
+        }
+        $.each(result,function (index,posObj) {
+            posObj.dis = calDisValue(posObj);
+        });
+        return result;
+    }
+    function isExistInArr(arrName,posObj) {
+        var index = (posObj.y -1)*cols + (posObj.x - 1);
+        if(arrName == "openPosObjArr"){
+            return $.inArray(openIndexArr,index) >= 0;
+        }else if(arrName == "closePosObjArr"){
+            return $.inArray(closeIndexArr,index) >= 0;
+        }else{
+            return false;
+        }
+    }
+    function calDisValue(posObj) {
+        var destinationX = $endLi.data("x"),destinationY = $endLi.data("y");
+        var currentX = posObj.x,currentY=posObj.y;
+        return Math.abs(currentX-destinationX) + Math.abs(currentY-destinationY);
+    }
+    function isLiEqual(li1,li2) {
+        if(li1 && li2){
+            var x1 = $(li1).data("x"),y1 = $(li1).data("y");
+            var x2 = $(li2).data("x"),y2 = $(li2).data("y");
+            if(x1 && x2 && x1 == x2 && y1 && y2 && y1 == y2){
+                return true;
+            }else{
+                return false;
+            }
+        }else {
+            return false;
+        }
+    }
+</script>
+</body>
+</html>

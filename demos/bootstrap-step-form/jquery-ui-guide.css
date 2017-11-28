@@ -1,0 +1,212 @@
+*{
+    margin:0;
+    padding:0;
+    font-family: Lato, "Helvetica Neue", Helvetica, "Nimbus Sans L", Arial, "Liberation Sans", "Hiragino Sans GB",
+    "PingFang SC", "Source Han Sans CN", "Source Han Sans SC", "Microsoft YaHei", "Wenquanyi Micro Hei", "WenQuanYi Zen Hei", "ST Heiti", SimHei, "WenQuanYi Zen Hei Sharp", sans-serif;
+}
+html,body{
+    width:100%;
+    height:100%;
+    background-color:#EFEFEF;
+    overflow: hidden;
+}
+
+#UI_Guide_Container{
+    width:700px;
+    min-height: 500px;
+    margin:40px auto 0 auto;
+    background:#FFF;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-box-shadow: 1px 1px 1px 1px #BBB;
+    -moz-box-shadow: 1px 1px 1px 1px #BBB;
+    box-shadow: 1px 1px 1px 1px #BBB;
+}
+#UI_Guide_Container ul{
+    list-style: none;
+}
+/**********************************
+*       Step Container
+***********************************/
+#UI_Guide_Container ul.ui-guide-step{
+    font-size:13px;
+    width:90%;
+    margin:0 auto;
+    padding:10px 0 0 0;
+}
+#UI_Guide_Container ul.ui-guide-step > li{
+    display: inline-block;
+    position: relative;
+    width:100px;
+    color:#CCC;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    float: left;
+}
+#UI_Guide_Container ul.ui-guide-step > li dl{
+    margin-bottom: 10px;
+}
+/********li.over***********/
+#UI_Guide_Container ul.ui-guide-step > li[data-ui-guide-over='true'] dl dt i.fa-check{
+    display: block;
+}
+#UI_Guide_Container ul.ui-guide-step > li[data-ui-guide-over='true'] dl dt b,
+#UI_Guide_Container ul.ui-guide-step > li[data-ui-guide-over='true'] dl dt i.fa-close{
+    display: none;
+}
+#UI_Guide_Container ul.ui-guide-step > li[data-ui-guide-over='true']{
+    color:#5cb85c;
+}
+#UI_Guide_Container ul.ui-guide-step > li[data-ui-guide-over='true'] dt{
+    border-color:#5cb85c;
+}
+/********li.active***********/
+#UI_Guide_Container ul.ui-guide-step > li[data-ui-guide-active='true'] dl dt b{
+    display: block;
+}
+#UI_Guide_Container ul.ui-guide-step > li[data-ui-guide-active='true'] dl dt i.fa-check,
+#UI_Guide_Container ul.ui-guide-step > li[data-ui-guide-active='true'] dl dt i.fa-close{
+    display: none;
+}
+#UI_Guide_Container ul.ui-guide-step > li[data-ui-guide-active='true']{
+    color:#428bca;
+}
+#UI_Guide_Container ul.ui-guide-step > li[data-ui-guide-active='true'] dt{
+    border-color:#428bca;
+}
+/********li.error***********/
+#UI_Guide_Container ul.ui-guide-step > li[data-ui-guide-error='true'] dl dt b,
+#UI_Guide_Container ul.ui-guide-step > li[data-ui-guide-error='true'] dl dt i.fa-check {
+    display: none;
+}
+#UI_Guide_Container ul.ui-guide-step > li[data-ui-guide-error='true'] dl dt i.fa-close{
+    display: block;
+}
+#UI_Guide_Container ul.ui-guide-step > li[data-ui-guide-error='true']{
+    color:#d9534f;
+}
+#UI_Guide_Container ul.ui-guide-step > li[data-ui-guide-error='true'] dl dt{
+    border-color:#d9534f;
+}
+/******************dl,dt,dd*************************/
+#UI_Guide_Container ul.ui-guide-step > li dl dt{
+    position: relative;
+    z-index: 12;
+    width:30px;
+    height:30px;
+    cursor: pointer;
+    margin:0 auto;
+    text-align: center;
+    line-height:23px;
+    vertical-align: middle;
+    -webkit-border-radius:100%;
+    -moz-border-radius:100%;
+    border-radius:100%;
+    border:4px solid #CCC;
+    background-color:#FFF;
+}
+/**********Step Icon************/
+#UI_Guide_Container ul.ui-guide-step > li dl dt i{
+    display: none;
+    font-size:18px;
+    line-height:22px;
+    height: 22px;
+    vertical-align: middle;
+}
+#UI_Guide_Container ul.ui-guide-step > li dl dt i.fa-check{
+    color:#5cb85c;
+}
+#UI_Guide_Container ul.ui-guide-step > li dl dt i.fa-close{
+    color:#d9534f;
+}
+
+#UI_Guide_Container ul.ui-guide-step > li dl dd{
+    text-align: center;
+}
+
+#UI_Guide_Container ul.ui-guide-step > li > div.ui-guide-stepLineWrapper{
+    position: absolute;
+    z-index: 10;
+    width:70px;
+    height:5px;
+    background-color:#CCC;
+    top:12px;
+    left:65px;
+}
+#UI_Guide_Container ul.ui-guide-step > li > div.ui-guide-stepLineWrapper span{
+    background-color:#5cb85c;
+    display: block;
+    height:5px;
+    transition:width 0.7s;
+}
+
+/**********************************
+*       Step Container
+***********************************/
+#UI_Guide_Container ul.ui-guide-input{
+    width:90%;
+    min-height: 400px;
+    position: relative;
+    margin:0 auto;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border:1px solid #CCC;
+    border-right: none;
+    border-left:none;
+}
+#UI_Guide_Container ul.ui-guide-input > li{
+    display: block;
+    position: absolute;
+    width:100%;
+    height:100%;
+}
+#UI_Guide_Container ul.ui-guide-input > li > div{
+    width:100%;
+    height:100%;
+    padding:10px;
+}
+#UI_Guide_Container ul.ui-guide-input div.input-group{
+    margin-bottom:15px;
+}
+#UI_Guide_Container ul.ui-guide-input div.input-group span.input-group-addon{
+    width:85px;
+}
+#UI_Guide_Container ul.ui-guide-input div.input-group input,#UI_Guide_Container ul.ui-guide-input div.input-group button.dropdown-toggle{
+    width:140px;
+}
+#UI_Guide_Container ul.ui-guide-input div.input-group button.dropdown-toggle span.caret{
+    margin-left:5px;
+}
+/**********************************
+*       Step Btn Container
+***********************************/
+#UI_Guide_Container .ui-guide-btn{
+    display: block;
+    width:90%;
+    margin:0 auto;
+    padding:20px 0 20px 0;
+    text-align: right;
+}
+#UI_Guide_Container .ui-guide-btn > button{
+    margin-left:10px;
+    width:75px;
+}
+#UI_Guide_Container .ui-guide-btn > button:first-child{
+    margin-left:0;
+}
+#UI_Guide_Container .ui-guide-btn > button[data-ui-guide-btn-type="prew"]{
+
+}
+#UI_Guide_Container .ui-guide-btn > button[data-ui-guide-btn-type="next"]{
+
+}
+#UI_Guide_Container .ui-guide-btn > button[data-ui-guide-btn-type="ok"]{
+    display: none;
+}
+
+#UI_Guide_Container .ui-guide-btn > button i{
+    margin-right:5px;
+}

@@ -65,28 +65,30 @@ BlogAppManager.module("Entities",function (Entities,BlogAppManager,Backbone,Mari
     };
 
     var getAlbumImagesById = function () {
-        return new Entities.AlbumItemCollection([
-            {
-                id:1,
-                imageurl:"assets/image/ablum/1.jpg"
-            },
-            {
-                id:2,
-                imageurl:"assets/image/ablum/2.jpg"
-            },
-            {
-                id:3,
-                imageurl:"assets/image/ablum/3.jpg"
-            },
-            {
-                id:4,
-                imageurl:"assets/image/ablum/4.jpg"
-            },
-            {
-                id:5,
-                imageurl:"assets/image/ablum/5.jpg"
-            }
-        ]);
+        return new Entities.AlbumItemCollection(
+                [
+                {
+                    id:1,
+                    imageurl:"assets/image/ablum/1.jpg"
+                },
+                {
+                    id:2,
+                    imageurl:"assets/image/ablum/2.jpg"
+                },
+                {
+                    id:3,
+                    imageurl:"assets/image/ablum/3.jpg"
+                },
+                {
+                    id:4,
+                    imageurl:"assets/image/ablum/4.jpg"
+                },
+                {
+                    id:5,
+                    imageurl:"assets/image/ablum/5.jpg"
+                }
+            ]
+        );
     };
 
     var API = {
@@ -108,7 +110,7 @@ BlogAppManager.module("Entities",function (Entities,BlogAppManager,Backbone,Mari
     BlogAppManager.reqres.setHandler("albumlist:entities",function () {
         return API.getAlbumList();
     });
-    BlogAppManager.reqres.setHandler("albumitems:entities",function (id) {
+    BlogAppManager.reqres.setHandler("albumitems:entities",function (id,model) {
         return API.getAlbumItemsById(id);
     });
 });

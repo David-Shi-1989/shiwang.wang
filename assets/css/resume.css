@@ -35,12 +35,12 @@ table.resume-table{
 }
 table.resume-table.resume-table-contact tr td:first-child{
     width:15%;
-    text-align: right;
+    text-align: left;
+    padding-left:15px;
 }
 table.resume-table.resume-table-contact tr td:nth-child(2){
     width:15%;
     text-align: right;
-    padding-left:10px;
 }
 table.resume-table.resume-table-contact tr td:nth-child(2):after{
     content:':';

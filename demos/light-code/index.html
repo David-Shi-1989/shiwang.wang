@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>LightCode</title>
+    <link rel="stylesheet" href="./LightCode.css" />
+    <script src="../../assets/js/vendor/jquery-1.10.2.min.js"></script>
+    <script src="LightCode.js"></script>
+    <style type="text/css">
+        *{
+            margin:0;
+            padding:0;
+        }
+        .clr{clear:both;}
+        #content{
+            width:100%;
+            height:auto;
+        }
+        #left-input{
+            width:80%;
+            margin-left:3%;
+            margin-top:10px;
+        }
+        #ta_input{
+            width:100%;
+            min-height:300px;
+            resize:none;
+            padding:10px;
+            border-radius:3px;
+            font-size:0.8em;
+            font-family:Consolas;
+        }
+        #right-demo{
+            width:80%;
+            margin-left:3%;
+            margin-top:10px;
+            border-left:5px solid #eee;
+            min-height:300px;
+            box-sizing:border-box;
+        }
+        #btn_gen{
+            padding:10px 17px;
+            background:#fff;
+            color:#000;
+            border-radius:4px;
+            text-align:center;
+            font-family:Consolas;
+            margin-left:20px;
+        }
+        #c_demo{
+            display: block;
+            width:100%;
+            margin:0 auto;
+        }
+    </style>
+</head>
+<body>
+<div id="content">
+    <div id="left-input">
+        <textarea id="ta_input"></textarea>
+        <button onclick="btn_generate();" id="btn_gen">Generate</button>
+    </div>
+    <div id="right-demo">
+        <code class="lightcode-area" id="c_demo">
+
+        </code>
+    </div>
+</div>
+<div class="clr"></div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var html =
+                '<!DOCTYPE html>'+ '\n'+
+                '<html lang="en">'+ '\n'+
+                '<head>'+ '\n'+
+                '<meta charset="utf-8" />'+ '\n'+
+                '<title>LightCode</title>'+ '\n'+
+                '<link rel="stylesheet" href="__USER_CSS__/demo/LightCode.css" />'+ '\n'+
+                '<script src="__USER_VENDOR__/jquery/jquery-1.10.2.min.js">'+'<'+'/script>'+ '\n'+
+                '<'+'script src="__USER_JS__/demo/LightCode.min.js"><'+'/script>'+ '\n'+
+                '<title>Light Code</title>'+'\n'+
+                '</head>'+'\n'+
+                '<body>'+'\n'+
+                '<h1>Hello Light Code'+'</h1>'+'\n'+
+                '</body>'+'\n'+
+                '</html>';
+        $("#ta_input").text(html);
+    });
+    function btn_generate() {
+        $("#c_demo").html("");
+        var HTMLTree = CodeTree($("#ta_input").val());
+        HTMLTree.outputLightCode($("#c_demo"));
+    }
+    function transferHTML(html){
+        html = html.trim();
+        var result = "";
+        var arr = text.split("\n");
+        if (arr != null && arr.length > 0) {
+            for (var i = 0; i < arr.length; i++) {
+                if (arr[i].length > 0) {
+                    var _cur = arr[i].replace(/</gi, "&lt;").replace(/>/gi, "&gt;");
+                    _cur.replace(/^\d+\s*/i, " ");
+                    result += _cur + "\n";
+                }
+            }
+        }
+        return result;
+    }
+</script>
+</body>
+</html>

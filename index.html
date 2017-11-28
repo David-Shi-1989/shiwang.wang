@@ -390,96 +390,7 @@
     <!---Product ---->
     <script type="text/template" id="product-page">
         <h3>作品列表</h3>
-        <div id="demoContainer" class="row">
-            <!--<div class="col-lg-4 col-md-4 col-sm-6">-->
-                <!--<a href="" target="_blank" class="cover-img">-->
-                    <!--<img src="assets/image/demos/bootstrapValidator.png">-->
-                    <!--<span class="cover-des">基于BootStrap的表单验证,支持自定义正则验证及Ajax验证。</span>-->
-                <!--</a>-->
-                <!--<div class="cover-info">-->
-                    <!--<a href="" target="_blank"><h5>BootStrap Validator</h5></a>-->
-                <!--</div>-->
-                <!--<div class="cover-static">-->
-                    <!--<div>-->
-                        <!--<span>1</span>-->
-                    <!--</div>-->
-                    <!--<div>-->
-                        <!--<i class="fa fa-eye"></i><span>3</span>-->
-                        <!--<i class="fa fa-heart"></i><span>0</span>-->
-                    <!--</div>-->
-                <!--</div>-->
-            <!--</div>-->
-            <!--<div class="col-lg-4 col-md-4 col-sm-6">-->
-            <!--<a href="" target="_blank" class="cover-img">-->
-                <!--<img src="assets/image/demos/routerSearch.png">-->
-                <!--<span class="cover-des">基于A*算法的自动寻路AI。</span>-->
-            <!--</a>-->
-            <!--<div class="cover-info">-->
-                <!--<a href="" target="_blank"><h5>自动寻路算法</h5></a>-->
-            <!--</div>-->
-            <!--<div class="cover-static">-->
-                <!--<div>-->
-                    <!--<span>2</span>-->
-                <!--</div>-->
-                <!--<div>-->
-                    <!--<i class="fa fa-eye"></i><span>1</span>-->
-                    <!--<i class="fa fa-heart"></i><span>0</span>-->
-                <!--</div>-->
-            <!--</div>-->
-        <!--</div>-->
-            <!--<div class="col-lg-4 col-md-4 col-sm-6">-->
-            <!--<a href="" target="_blank" class="cover-img">-->
-                <!--<img src="assets/image/demos/ligthcode-1.png">-->
-                <!--<span class="cover-des">读取HTML代码，采用树形结构构造标签。最终输出带样式的HTML代码。常用于博客代码展示。</span>-->
-            <!--</a>-->
-            <!--<div class="cover-info">-->
-                <!--<a href="" target="_blank"><h5>HTML代码高亮</h5></a>-->
-            <!--</div>-->
-            <!--<div class="cover-static">-->
-                <!--<div>-->
-                    <!--<span>3</span>-->
-                <!--</div>-->
-                <!--<div>-->
-                    <!--<i class="fa fa-eye"></i><span>7</span>-->
-                    <!--<i class="fa fa-heart"></i><span>0</span>-->
-                <!--</div>-->
-            <!--</div>-->
-        <!--</div><div class="col-lg-4 col-md-4 col-sm-6">-->
-            <!--<a href="" target="_blank" class="cover-img">-->
-                <!--<img src="assets/image/demos/richText.png">-->
-                <!--<span class="cover-des">富文本多信息采集</span>-->
-            <!--</a>-->
-            <!--<div class="cover-info">-->
-                <!--<a href="" target="_blank"><h5>富文本采集</h5></a>-->
-            <!--</div>-->
-            <!--<div class="cover-static">-->
-                <!--<div>-->
-                    <!--<span>4</span>-->
-                <!--</div>-->
-                <!--<div>-->
-                    <!--<i class="fa fa-eye"></i><span>3</span>-->
-                    <!--<i class="fa fa-heart"></i><span>0</span>-->
-                <!--</div>-->
-            <!--</div>-->
-        <!--</div><div class="col-lg-4 col-md-4 col-sm-6">-->
-            <!--<a href="" target="_blank" class="cover-img">-->
-                <!--<img src="assets/image/demos/backbone.stock.png">-->
-                <!--<span class="cover-des">基于Backbone英文文档结构,将联系人app改写成股票app。同时结合使用Marionette.backbone.js MVC开发模式。</span>-->
-            <!--</a>-->
-            <!--<div class="cover-info">-->
-                <!--<a href="" target="_blank"><h5>Backbone.js教程翻译</h5></a>-->
-            <!--</div>-->
-            <!--<div class="cover-static">-->
-                <!--<div>-->
-                    <!--<span>5</span>-->
-                <!--</div>-->
-                <!--<div>-->
-                    <!--<i class="fa fa-eye"></i><span>35</span>-->
-                    <!--<i class="fa fa-heart"></i><span>0</span>-->
-                <!--</div>-->
-            <!--</div>-->
-        <!--</div>            -->
-        </div>
+        <div id="demoContainer" class="row"></div>
         <nav aria-label="Page navigation" class="page-num">
             <ul class="pagination">
                 <li>
@@ -518,6 +429,11 @@
                 <i class="fa fa-heart"></i><span><%= like %></span>
             </div>
         </div>
+    </script>
+
+    <script type="text/template" id="show-product-page">
+        <h4><%= title %></h4>
+        <iframe src="<%= url %>" style="width: 100%;height: 760px;border: 0;"></iframe>
     </script>
 
     <!---Album ---->

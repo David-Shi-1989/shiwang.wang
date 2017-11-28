@@ -1,0 +1,57 @@
+*{
+    margin:0;
+    padding:0;
+    font-family: "微软雅黑";
+}
+body,html{
+    width:100%;
+    height:100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+#form-panel{
+    width:50%;
+    margin:50px auto 10px auto;
+    border:1px solid #CCC;
+    -webkit-border-radius:7px;
+    -moz-border-radius:7px;
+    border-radius:7px;
+    padding:20px 40px;
+}
+#form-panel form > div.form-group.form-input{
+    height: 50px;
+}
+#form-panel input.form-control ~span.glyphicon{
+    position: absolute;
+    right:25px;
+    top:10px;
+}
+#form-panel input.form-control ~span.glyphicon.glyphicon-ok{
+    color:#5cb85c;
+}
+#form-panel input.form-control ~span.glyphicon.glyphicon-remove{
+    color:#a94442;
+    cursor: pointer;
+}
+#form-panel input.form-control ~span.glyphicon-refresh{
+    -moz-animation:rotate 2s infinite linear;
+    -webkit-animation:rotate 2s infinite linear;
+    animation:rotate 2s infinite linear;
+}
+#form-panel input.form-control ~p{
+    color:#a94442;
+}
+
+@-moz-keyframes rotate{
+    0%{ -moz-transform:rotate(0deg);}
+    100%{ -moz-transform:rotate(360deg);}
+}
+@-webkit-keyframes rotate{
+    0%{  -webkit-transform:rotate(0deg);}
+    100%{  -webkit-transform:rotate(360deg);}
+}
+@keyframes rotate{
+    0%{ transform:rotate(0deg);}
+    100%{ transform:rotate(360deg);}
+}

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="./jquery-ui-guide.css">
+    <link rel="stylesheet" type="text/css" href="../../assets/css/vendor/bootstrap-3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../assets/css/vendor/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../../assets/css/vendor/bootstrap-datetimepicker/bootstrap-datetimepicker.min.css">
+    <script type="text/javascript" src="../../assets/js/vendor/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../../assets/css/vendor/bootstrap-3.3.4/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../assets/css/vendor/bootstrap-datetimepicker/bootstrap-datetimepicker.js"></script>
+    <script type="text/javascript" src="./jquery-ui-guide.js"></script>
+    <script type="text/javascript" src="./richInputStep.js"></script>
+    <title>富文本采集步骤</title>
+</head>
+<body>
+<div id="content">
+    <div id="UI_Guide_Container">
+        <ul data-ui-guide-stepcontainer="true">
+        </ul>
+        <ul data-ui-guide-inputcontainer="true">
+            <li>
+                <div class="row">
+                    <div class="col-lg-5">
+                        <div class="input-group">
+                            <span class="input-group-addon">姓名</span>
+                            <input type="text" class="form-control" placeholder="Username">
+                        </div>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="input-group">
+                            <span class="input-group-addon">性别</span>
+                            <div class="input-group-btn">
+                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <span class="js-value">请选择</span>
+                                    <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu-right">
+                                    <li><a href="#">男</a></li>
+                                    <li><a href="#">女</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="input-group">
+                            <span class="input-group-addon">出生日期</span>
+                            <div class="input-group-btn">
+                                <button type="button" class="btn btn-default dropdown-toggle form_datetime" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <span class="js-value">请选择</span>
+                                    <span class="caret"></span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="input-group">
+                            <span class="input-group-addon">政治面貌</span>
+                            <div class="input-group-btn">
+                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <span class="js-value">请选择</span>
+                                    <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu-right">
+                                    <li><a href="#">群众</a></li>
+                                    <li><a href="#">团员</a></li>
+                                    <li><a href="#">中共党员</a></li>
+                                    <li><a href="#">其他</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div>Step 2.</div>
+            </li>
+            <li>
+                <div>Step 3.</div>
+            </li>
+            <li>
+                <div>Step 4.</div>
+            </li>
+            <li>
+                <div>完成!</div>
+            </li>
+        </ul>
+    </div>
+</div>
+<script>
+    $(function () {
+        $("#UI_Guide_Container").uiGuide();
+        var now =new Date();
+        var nowStr = now.getFullYear()+"-"+(now.getMonth()+1)+"-"+now.getDate()+" "+now.getHours()+":"+now.getMinutes();
+        $(".form_datetime").datetimepicker({
+            language:"zh",
+            format: "yyyy年m月dd日",
+            autoclose:true,
+            todayBtn:true,
+            todayHighlight:true,
+            startDate:"1930-01-01 00:00",
+            endDate:nowStr,
+            minView:"month"
+        });
+    });
+</script>
+</body>
+</html>

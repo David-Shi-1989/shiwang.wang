@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <link rel="stylesheet" type="text/css" href="../../assets/css/vendor/bootstrap-3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+    <script type="text/javascript" src="../../assets/js/vendor/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../../assets/css/vendor/bootstrap-3.3.4/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="./script.js"></script>
+    <title>BootStrap Validator</title>
+</head>
+<body style="">
+<div id="form-panel">
+    <form class="form-horizontal sww-validator-form-panel">
+        <div class="form-group form-input">
+            <label class="col-sm-3 control-label">用户名</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" placeholder="User Name" data-sv-trigger="change" data-sv-must="true" data-sv-must-message="用户名为必填项" data-sv-regex="^[a-z0-9A-Z_]{3,10}$" data-sv-regex-message="用户名由3到10位字母、数字或下划线组成" data-sv-ajax="http://shiwang.wang//index.php/Home/Demo/bootStrapValidator?key=userName" data-sv-ajax-message="用户名已被注册">
+            </div>
+        </div>
+        <div class="form-group form-input">
+            <label class="col-sm-3 control-label">手机号码</label>
+            <div class="col-sm-9">
+                <input type="tel" class="form-control" placeholder="Cellphone Number" data-sv-must="true" data-sv-must-message="手机号码为必填项" data-sv-istel="true" data-sv-istel-message="请输入有效的手机号码" data-sv-ajax="http://shiwang.wang//index.php/Home/Demo/bootStrapValidator?key=telNum" data-sv-ajax-message="手机号已被注册">
+            </div>
+        </div>
+        <div class="form-group form-input">
+            <label class="col-sm-3 control-label">年龄</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" placeholder="Age" data-sv-must="true" data-sv-must-message="年龄不能为空" data-sv-isinteger="true" data-sv-isinteger-message="年龄必须为正整数" data-sv-greatthan="12" data-sv-greatthan-message="年龄必须大于12" data-sv-lessthan="60" data-sv-lessthan-message="年龄必须小于60">
+            </div>
+        </div>
+        <div class="form-group form-input">
+            <label class="col-sm-3 control-label">电子邮箱</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" placeholder="Email" data-sv-must="true" data-sv-must-message="电子邮箱不能为空" data-sv-isemail="true" data-sv-isemail-message="请输入正确格式的电子邮箱地址">
+            </div>
+        </div>
+        <div class="form-group form-input">
+            <label class="col-sm-3 control-label">密码</label>
+            <div class="col-sm-9">
+                <input type="password" class="form-control" placeholder="Password" data-sv-must="true" data-sv-must-message="密码不能为空" data-sv-regex="^[a-z0-9A-Z@#!$%^&amp;*()-_=+]{6,20}$" data-sv-regex-message="密码由6到20位字母、数字或符号组成" data-sv-ispassword="true">
+            </div>
+        </div>
+        <div class="form-group form-input">
+            <label class="col-sm-3 control-label">重复密码</label>
+            <div class="col-sm-9">
+                <input type="password" class="form-control" placeholder="Repeat Password" data-sv-must="true" data-sv-must-message="请再次输入密码" data-sv-isrepassword="true" data-sv-isrepassword-message="密码输入不一致">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox"> Remember me
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <input type="button" class="btn btn-primary btn-submit" value="确认">
+                <input type="reset" class="btn btn-default btn-reset" value="重置">
+            </div>
+        </div>
+    </form>
+</div>
+<script type="text/javascript">
+    $("#form-panel form").swwValidator();
+</script>
+
+</body>
+</html>
