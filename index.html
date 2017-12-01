@@ -45,6 +45,10 @@
     <script type="text/javascript" src="assets/js/list/show_album.js"></script>
     <script type="text/javascript" src="assets/js/controller/show_album.js"></script>
 
+    <script type="text/javascript" src="assets/js/entities/message.js"></script>
+    <script type="text/javascript" src="assets/js/list/message_list.js"></script>
+    <script type="text/javascript" src="assets/js/controller/message_list.js"></script>
+
     <title>施旺旺的主页</title>
 </head>
 <body>
@@ -501,6 +505,15 @@
     </script>
 
     <!---Message---->
+    <script type="text/template" id="message-page">
+        <h3>我的留言</h3>
+        <div id="messageContainer">
+
+        </div>
+    </script>
+    <script type="text/template" id="message-page-item">
+        <li><%= content %></li>
+    </script>
 
 <script type="text/javascript">
     BlogAppManager.start();

@@ -33,7 +33,7 @@ BlogAppManager.module("BlogApp",function (BlogApp,BlogAppManager,Backbone,Marion
             BlogAppManager.Controller.Album.showList();
         },
         listMessage:function () {
-            BlogAppManager.trigger("menu:select:"+this.menuIdEnum.message);
+            BlogAppManager.Controller.Message.showList();
         },
 
         showArticleById:function (id) {
