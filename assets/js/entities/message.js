@@ -14,19 +14,34 @@ BlogAppManager.module("Entities",function (Entities,BlogAppManager,Backbone,Mari
                 id:1,
                 nickname:"MM",
                 datetime:"2017/11/23 10:23:11",
-                content:"这是一个有声音的留言"
+                content:"这是一个有声音的留言",
             },
             {
                 id:2,
                 nickname:"M1231撒旦",
                 datetime:"2017/11/23 04:23:11",
-                content:"此处无声胜有声"
+                content:"此处无声胜有声",
+                items: [
+                    {
+                        id:4,
+                        nickname:"M12旦",
+                        datetime:"2017/11/23 04:23:11",
+                        content:"回复1"
+                    },
+                    {
+                        id:5,
+                        nickname:"M12旦",
+                        datetime:"2017/11/23 04:23:11",
+                        content:"回复2"
+                    },
+                ]
             },
             {
                 id:3,
                 nickname:"诗人",
                 datetime:"2017/11/21 22:23:11",
-                content:"欲把西湖比西子"
+                content:"欲把西湖比西子",
+                items:[]
             }
         ]);
     };

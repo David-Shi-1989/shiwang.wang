@@ -12,6 +12,7 @@
     <link rel="stylesheet" type="text/css" href="assets/css/productList.css">
     <link rel="stylesheet" type="text/css" href="assets/css/albumList.css">
     <link rel="stylesheet" type="text/css" href="assets/css/albumItem.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/message.css">
     <script type="text/javascript" src="assets/js/vendor/jquery-1.10.2.min.js"></script>
     <script type="text/javascript" src="assets/js/vendor/json2.js"></script>
     <script type="text/javascript" src="assets/js/vendor/underscore-min.js"></script>
@@ -506,13 +507,24 @@
 
     <!---Message---->
     <script type="text/template" id="message-page">
-        <h3>我的留言</h3>
-        <div id="messageContainer">
-
-        </div>
+        <table>
+            <thead>
+            <th><h3>我的留言</h3></th>
+            </thead>
+            <tbody></tbody>
+        </table>
     </script>
     <script type="text/template" id="message-page-item">
-        <li><%= content %></li>
+            <img src="assets/image/avatar/1.jpg" class="msg-avatar">
+            <%= content %> <%= datetime %>
+        <% if(typeof(items) == "object") {%>
+        <% for(var i=0;i<items.length;i++) { %>
+        <% var item = items[i]; %>
+        <li>
+            <%= items[i].content %>
+        </li>
+        <% } %>
+        <% } %>
     </script>
 
 <script type="text/javascript">
