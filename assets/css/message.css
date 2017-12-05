@@ -1,4 +1,27 @@
-#messageTable img.msg-avatar{
+#messageListContainer img.msg-avatar{
     width:40px;
     height:40px;
+    border-radius: 3px;
+    border:1px solid #dff0d8;
+    float: left;
+}
+#messageListContainer ul.msg-level-1 > li{
+    margin-bottom: 15px;
+}
+
+#messageListContainer ul.msg-level-2{
+    margin-left: 40px;
+}
+#messageListContainer ul.msg-level-2 img.msg-avatar{
+    width:25px;
+    height:25px;
+}
+
+#messageListContainer div.msg-info{
+    float: left;
+}
+
+#messageListContainer div.msg-info span.msg-info-nickname{
+    color:darkblue;
+    font-weight: bolder;
 }

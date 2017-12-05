@@ -506,27 +506,73 @@
     </script>
 
     <!---Message---->
-    <script type="text/template" id="message-page">
+    <script type="text/template" id="message-page2">
+        <thead>
+        <th><h3>我的留言</h3></th>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </script>
+    <script type="text/template" id="message-page-item2">
+        <td><img src="<%= avatar %>" class="msg-avatar"></td>
+        <td>
+            <div class="msg-info">
+                <span class="msg-info-nickname"><%= nickname %></span>
+                <span class="msg-info-content"><%= content %></span>
+                <span class="msg-info-date"><%= datetime %></span>
+            </div>
+        </td>
+        <% if(typeof(items) == "object" && items.length > 0) {%>
         <table>
-            <thead>
-            <th><h3>我的留言</h3></th>
-            </thead>
-            <tbody></tbody>
+            <% for(var i=0;i<items.length;i++) { %>
+            <tr class="msg-level-2">
+                <% var item = items[i]; %>
+                <td><img src="<%= item.avatar %>" class="msg-avatar"></td>
+                <td>
+                    <div>
+                        <span class="msg-info-nickname"><%= item.nickname %></span>
+                        <span class="msg-info-content"><%= item.content %></span>
+                        <span class="msg-info-date"><%= item.datetime %></span>
+                        <div class="clr"></div>
+                    </div>
+                </td>
+            </tr>
+            <% } %>
         </table>
+        <% } %>
+    </script>
+    <script type="text/template" id="message-page">
+        <h3>我的留言</h3>
+        <ul>
+
+        </ul>
     </script>
     <script type="text/template" id="message-page-item">
-            <img src="assets/image/avatar/1.jpg" class="msg-avatar">
-            <%= content %> <%= datetime %>
-        <% if(typeof(items) == "object") {%>
-        <% for(var i=0;i<items.length;i++) { %>
-        <% var item = items[i]; %>
-        <li>
-            <%= items[i].content %>
-        </li>
-        <% } %>
+        <div><img src="<%= avatar %>" class="msg-avatar"></div>
+        <div class="msg-info">
+            <span class="msg-info-nickname"><%= nickname %></span>
+            <span class="msg-info-content"><%= content %></span>
+            <span class="msg-info-date"><%= datetime %></span>
+        </div>
+        <div class="clr"></div>
+        <% if(typeof(items) == "object" && items.length > 0) {%>
+            <ul>
+                <% for(var i=0;i<items.length;i++) { %>
+                <li class="msg-level-2">
+                <% var item = items[i]; %>
+                    <div><img src="<%= item.avatar %>" class="msg-avatar"></div>
+                    <div>
+                        <span class="msg-info-nickname"><%= item.nickname %></span>
+                        <span class="msg-info-content"><%= item.content %></span>
+                        <span class="msg-info-date"><%= item.datetime %></span>
+                    </div>
+                    <div class="clr"></div>
+                </li>
+                <% } %>
+            </ul>
         <% } %>
     </script>
-
 <script type="text/javascript">
     BlogAppManager.start();
 </script>
