@@ -8,6 +8,7 @@ BlogAppManager.module("Controller",function (Controller,BlogAppManager,Backbone,
 
             BlogAppManager.mainRegion.show(messageListView);
             BlogAppManager.trigger("menu:select:6");
+            autosize(document.querySelectorAll('textarea'));
         }
     }
 });

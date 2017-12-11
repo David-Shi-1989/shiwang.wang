@@ -1,3 +1,62 @@
+#addComment{
+    position: relative;
+    background-color: #f6f7f9;
+    padding:4px 8px;
+}
+#addComment .avatar-container{
+    position: relative;
+    border-radius: 50%;
+    overflow: hidden;
+    width:32px;
+    height: 32px;
+    border:1px solid rgba(0, 0, 0, .1);
+}
+#addComment .avatar-container img{
+    width:100%;
+}
+
+#addComment div.div-1{
+    position: relative;
+}
+#addComment div.div-1 > div{
+    position: absolute;
+    left: 0;
+    top:0;
+}
+
+#addComment div.div-2{
+    padding-left:42px;
+    width:100%;
+}
+#addComment div.div-2 > div{
+    border:1px solid #BBB;
+    border-radius: 6px;
+    font-size: 13px;
+    font-family:'Microsoft YaHei';
+    background-color:#FFF;
+}
+#addComment div.div-2 > div textarea{
+    width:100%;
+    resize: none;
+    padding:2px 8px;
+    word-break:break-all;
+}
+#addComment div.div-2 > div > div{
+    text-align: right;
+    padding-right: 10px;
+}
+#addComment div.div-2 > div > div > a{
+    display: inline-block;
+    cursor:pointer;
+    width:16px;
+    height: 16px;
+    background-image: url(../../assets/image/RMrUMzRNO-L.png);
+    background-repeat: no-repeat;
+    -webkit-background-size: auto;
+    background-size: auto;
+    background-position: -34px -1040px;
+}
+
 #messageListContainer img.msg-avatar{
     width:40px;
     height:40px;

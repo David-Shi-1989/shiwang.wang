@@ -311,6 +311,18 @@ i.fa{
 .clr{
     clear: both;
 }
+.clearfix{
+    zoom:1;
+}
+.clearfix:after{
+    clear: both;
+    content: ".";
+    display: block;
+    font-size: 0;
+    height:0;
+    line-height:0;
+    visibility: hidden;
+}
 .cannot-select{
     user-select: none;
     -webkit-user-select: none;
@@ -442,6 +454,15 @@ ul.ul-timeline li div.ul-timeline-circle{
 }
 .fake-layer span.switch-btn:hover{
     opacity:1;
+}
+
+textarea.txt-transparent{
+    border:0;
+    background-color: transparent;
+}
+textarea.txt-transparent:focus{
+    border:0;
+    outline: none;
 }
 
 @keyframes anm-menu-rotate {

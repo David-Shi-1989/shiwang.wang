@@ -19,6 +19,7 @@
     <script type="text/javascript" src="assets/js/vendor/backbone.js"></script>
     <script type="text/javascript" src="assets/js/vendor/backbone.marionette.js"></script>
     <script type="text/javascript" src="assets/css/vendor/bootstrap-3.3.4/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/js/vendor/textareaAutoHeight.js"></script>
 
     <script type="text/javascript" src="assets/js/app.js"></script>
 
@@ -544,6 +545,26 @@
     </script>
     <script type="text/template" id="message-page">
         <h3>我的留言</h3>
+        <div id="addComment">
+            <div class="div-1">
+                <div>
+                    <div class="avatar-container">
+                        <img src="assets/image/avatar/3.jpg">
+                    </div>
+                </div>
+            </div>
+            <div class="div-2">
+                <div>
+                    <textarea class="txt-transparent" placeholder="我也要留言..." maxlength="500" cols="10"></textarea>
+                    <div>
+                        <a></a>
+                    </div>
+                </div>
+            </div>
+            <div style="position: absolute;bottom: 32px;right:8px;width:50%;min-height: 20px;background: red;">
+                <i style="position:absolute;display: block;background-image: url(assets/image/qjMhT4sjg84.png);background-repeat: no-repeat;-webkit-background-size: auto;background-size: auto;background-position: 0 -419px;bottom:-8px;height: 8px;width:16px;right: 12px;;"></i>
+            </div>
+        </div>
         <ul>
 
         </ul>
@@ -574,6 +595,9 @@
         <% } %>
     </script>
 <script type="text/javascript">
+    function init() {
+
+    }
     BlogAppManager.start();
 </script>
 </body>
