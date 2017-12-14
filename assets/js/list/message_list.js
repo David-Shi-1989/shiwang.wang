@@ -9,6 +9,18 @@ BlogAppManager.module("List",function (List,BlogAppManager,Backbone,Marionette,$
         id: "messageListContainer",
         childView: List.MessageListItem,
         template: "#message-page",
-        childViewContainer:"ul"
+        childViewContainer:"ul.msg-target",
+        events:{
+            "click a.msg-add-btn-emoji":"openEmojiContainer",
+            "click div.msg-emoji-class ul a":"switchEmojiClass"
+        },
+        openEmojiContainer:function () {
+            $(this.$el).find(".msg-emoji-container").toggle();
+        },
+        switchEmojiClass:function (evt) {
+            evt.preventDefault();
+            evt.stopPropagation();
+            $(evt.target).add($(this.$el).find("div.msg-emoji-class span.emoji-hover")).toggleClass("emoji-hover").toggleClass("emoji-normal");
+        }
     });
 });

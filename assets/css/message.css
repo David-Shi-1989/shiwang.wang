@@ -57,6 +57,122 @@
     background-position: -34px -1040px;
 }
 
+#addComment div.msg-emoji-container {
+    /*display: none;*/
+    position: absolute;
+    bottom: -186px;
+    right: 5px;
+    width: 50%;
+    min-height: 180px;
+    background: #FFF;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, .1), 0 1px 10px rgba(0, 0, 0, .35);
+    border-radius: 3px;
+}
+
+#addComment div.msg-emoji-container > div {
+    width: 100%;
+    height: 180px;
+    position: relative;
+}
+
+#addComment div.msg-emoji-container > div .msg-emoji-list {
+    height: 150px;
+    width: 100%;
+    background: yellow;
+    border-radius: 3px 3px 0 0;
+}
+
+#addComment div.msg-emoji-container > div .msg-emoji-class {
+    padding:7px 10px;
+    height: 30px;
+    width: 100%;
+    background: #f6f7f9;
+    border-top: 1px #dddfe2 solid;
+    border-radius: 0 0 2px 2px;
+    border-radius: 0 0 3px 3px;
+}
+#addComment div.msg-emoji-container > div .msg-emoji-class ul{
+    list-style: none;
+}
+#addComment div.msg-emoji-container > div .msg-emoji-class ul > li{
+    display: inline-block;
+    margin-right: 15px;
+}
+#addComment div.msg-emoji-container > div .msg-emoji-class ul > li > a{
+    cursor: pointer;
+}
+#addComment div.msg-emoji-container > div .msg-emoji-class ul > li > a > span{
+    display: block;
+    width:16px;
+    height:16px;
+    background-image: url(../../assets/image/xKMTeLQWShG.png);
+    background-repeat:no-repeat;
+    background-size: auto;
+}
+#addComment div.msg-emoji-container > div .msg-emoji-class ul > li > a.emoji-class-1 span.emoji-hover{
+    background-position: 0 -221px;
+}
+#addComment div.msg-emoji-container > div .msg-emoji-class ul > li > a.emoji-class-1 span.emoji-normal{
+    background-position: 0 -204px;
+}
+#addComment div.msg-emoji-container > div .msg-emoji-class ul > li > a.emoji-class-2 span.emoji-hover{
+    background-position: 0 -51px;
+}
+#addComment div.msg-emoji-container > div .msg-emoji-class ul > li > a.emoji-class-2 span.emoji-normal{
+    background-position: 0 -34px;
+}
+#addComment div.msg-emoji-container > div .msg-emoji-class ul > li > a.emoji-class-3 span.emoji-hover{
+    background-position: 0 -119px;
+}
+#addComment div.msg-emoji-container > div .msg-emoji-class ul > li > a.emoji-class-3 span.emoji-normal{
+    background-position: 0 -102px;
+}
+#addComment div.msg-emoji-container > div .msg-emoji-class ul > li > a.emoji-class-4 span.emoji-hover{
+    background-position: 0 -17px;
+}
+#addComment div.msg-emoji-container > div .msg-emoji-class ul > li > a.emoji-class-4 span.emoji-normal{
+    background-position: 0 0;
+}
+#addComment div.msg-emoji-container > div .msg-emoji-class ul > li > a.emoji-class-5 span.emoji-hover{
+    background-position: 0 -153px;
+}
+#addComment div.msg-emoji-container > div .msg-emoji-class ul > li > a.emoji-class-5 span.emoji-normal{
+    background-position: 0 -136px;
+}
+#addComment div.msg-emoji-container > div .msg-emoji-class ul > li > a.emoji-class-6 span.emoji-hover{
+    background-position: 0 -255px;
+}
+#addComment div.msg-emoji-container > div .msg-emoji-class ul > li > a.emoji-class-6 span.emoji-normal{
+    background-position: 0 -238px;
+}
+#addComment div.msg-emoji-container > div .msg-emoji-class ul > li > a.emoji-class-7 span.emoji-hover{
+    background-position: 0 -289px;
+}
+#addComment div.msg-emoji-container > div .msg-emoji-class ul > li > a.emoji-class-7 span.emoji-normal{
+    background-position: 0 -272px;
+}
+#addComment div.msg-emoji-container > div .msg-emoji-class ul > li > a.emoji-class-8 span.emoji-hover{
+    background-position: 0 -85px;
+}
+#addComment div.msg-emoji-container > div .msg-emoji-class ul > li > a.emoji-class-8 span.emoji-normal{
+    background-position: 0 -68px;
+}
+
+#addComment div.msg-emoji-container i.msg-emoji-i1 {
+    position: absolute;
+    display: block;
+    background-image: url(../../assets/image/qjMhT4sjg84.png);
+    background-repeat: no-repeat;
+    -webkit-background-size: auto;
+    background-size: auto;
+    background-position: 0 -428px;
+    top: -8px;
+    height: 8px;
+    width: 16px;
+    right: 12px;
+}
+
+
 #messageListContainer img.msg-avatar{
     width:40px;
     height:40px;
