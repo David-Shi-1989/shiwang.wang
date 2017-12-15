@@ -1,54 +1,61 @@
-#addComment{
+#addComment {
     position: relative;
     background-color: #f6f7f9;
-    padding:4px 8px;
+    padding: 4px 8px;
 }
-#addComment .avatar-container{
+
+#addComment .avatar-container {
     position: relative;
     border-radius: 50%;
     overflow: hidden;
-    width:32px;
+    width: 32px;
     height: 32px;
-    border:1px solid rgba(0, 0, 0, .1);
-}
-#addComment .avatar-container img{
-    width:100%;
+    border: 1px solid rgba(0, 0, 0, .1);
 }
 
-#addComment div.div-1{
+#addComment .avatar-container img {
+    width: 100%;
+}
+
+#addComment div.div-1 {
     position: relative;
 }
-#addComment div.div-1 > div{
+
+#addComment div.div-1 > div {
     position: absolute;
     left: 0;
-    top:0;
+    top: 0;
 }
 
-#addComment div.div-2{
-    padding-left:42px;
-    width:100%;
+#addComment div.div-2 {
+    padding-left: 42px;
+    width: 100%;
 }
-#addComment div.div-2 > div{
-    border:1px solid #BBB;
+
+#addComment div.div-2 > div {
+    border: 1px solid #BBB;
     border-radius: 6px;
     font-size: 13px;
-    font-family:'Microsoft YaHei';
-    background-color:#FFF;
+    font-family: 'Microsoft YaHei';
+    background-color: #FFF;
 }
-#addComment div.div-2 > div textarea{
-    width:100%;
+
+#addComment div.div-2 > div textarea {
+    width: 100%;
     resize: none;
-    padding:2px 8px;
-    word-break:break-all;
+    padding: 2px 8px;
+    word-break: break-all;
 }
-#addComment div.div-2 > div > div{
+
+#addComment div.div-2 > div > div {
     text-align: right;
     padding-right: 10px;
 }
-#addComment div.div-2 > div > div > a{
+
+#addComment div.div-2 > div > div > a {
     display: inline-block;
-    cursor:pointer;
-    width:16px;
+    cursor: pointer;
+    width: 16px;
     height: 16px;
     background-image: url(../../assets/image/RMrUMzRNO-L.png);
     background-repeat: no-repeat;
@@ -62,7 +69,7 @@
     position: absolute;
     bottom: -186px;
     right: 5px;
-    width: 50%;
+    width: 600px;
     min-height: 180px;
     background: #FFF;
     box-shadow: 0 0 0 1px rgba(0, 0, 0, .1), 0 1px 10px rgba(0, 0, 0, .35);
@@ -78,12 +85,47 @@
 #addComment div.msg-emoji-container > div .msg-emoji-list {
     height: 150px;
     width: 100%;
-    background: yellow;
     border-radius: 3px 3px 0 0;
+    overflow: hidden;
+}
+
+#addComment div.msg-emoji-container > div .msg-emoji-list > div {
+    width: 4800px;
+}
+
+#addComment div.msg-emoji-container > div .msg-emoji-list > div > ul {
+    list-style: none;
+    width: 600px;
+    float: left;
+    padding:4px;
+}
+
+#addComment div.msg-emoji-container > div .msg-emoji-list  > div > ul li {
+    display: inline-block;
+}
+
+#addComment div.msg-emoji-container > div .msg-emoji-list  > div > ul li a {
+    cursor: pointer;
+    display: block;
+    width: 28px;
+    height: 28px;
+    box-sizing: border-box;
+    border: 1px solid transparent;
+}
+
+#addComment div.msg-emoji-container > div .msg-emoji-list  > div > ul li a:hover {
+    border: 1px solid #777;
+}
+
+#addComment div.msg-emoji-container > div .msg-emoji-list  > div > ul li a span {
+    display: block;
+    width:24px;
+    height:24px;
+    background-image: url("../image/emoji/emoji8-20160718.min.png");
 }
 
 #addComment div.msg-emoji-container > div .msg-emoji-class {
-    padding:7px 10px;
+    padding: 7px 10px;
     height: 30px;
     width: 100%;
     background: #f6f7f9;
@@ -91,70 +133,91 @@
     border-radius: 0 0 2px 2px;
     border-radius: 0 0 3px 3px;
 }
-#addComment div.msg-emoji-container > div .msg-emoji-class ul{
+
+#addComment div.msg-emoji-container > div .msg-emoji-class ul {
     list-style: none;
 }
-#addComment div.msg-emoji-container > div .msg-emoji-class ul > li{
+
+#addComment div.msg-emoji-container > div .msg-emoji-class ul > li {
     display: inline-block;
     margin-right: 15px;
 }
-#addComment div.msg-emoji-container > div .msg-emoji-class ul > li > a{
+
+#addComment div.msg-emoji-container > div .msg-emoji-class ul > li > a {
     cursor: pointer;
 }
-#addComment div.msg-emoji-container > div .msg-emoji-class ul > li > a > span{
+
+#addComment div.msg-emoji-container > div .msg-emoji-class ul > li > a > span {
     display: block;
-    width:16px;
-    height:16px;
+    width: 16px;
+    height: 16px;
     background-image: url(../../assets/image/xKMTeLQWShG.png);
-    background-repeat:no-repeat;
+    background-repeat: no-repeat;
     background-size: auto;
+    transition: all 0.2s;
 }
-#addComment div.msg-emoji-container > div .msg-emoji-class ul > li > a.emoji-class-1 span.emoji-hover{
+
+#addComment div.msg-emoji-container > div .msg-emoji-class ul > li > a.emoji-class-1 span.emoji-hover {
     background-position: 0 -221px;
 }
-#addComment div.msg-emoji-container > div .msg-emoji-class ul > li > a.emoji-class-1 span.emoji-normal{
+
+#addComment div.msg-emoji-container > div .msg-emoji-class ul > li > a.emoji-class-1 span {
     background-position: 0 -204px;
 }
-#addComment div.msg-emoji-container > div .msg-emoji-class ul > li > a.emoji-class-2 span.emoji-hover{
+
+#addComment div.msg-emoji-container > div .msg-emoji-class ul > li > a.emoji-class-2 span.emoji-hover {
     background-position: 0 -51px;
 }
-#addComment div.msg-emoji-container > div .msg-emoji-class ul > li > a.emoji-class-2 span.emoji-normal{
+
+#addComment div.msg-emoji-container > div .msg-emoji-class ul > li > a.emoji-class-2 span {
     background-position: 0 -34px;
 }
-#addComment div.msg-emoji-container > div .msg-emoji-class ul > li > a.emoji-class-3 span.emoji-hover{
+
+#addComment div.msg-emoji-container > div .msg-emoji-class ul > li > a.emoji-class-3 span.emoji-hover {
     background-position: 0 -119px;
 }
-#addComment div.msg-emoji-container > div .msg-emoji-class ul > li > a.emoji-class-3 span.emoji-normal{
+
+#addComment div.msg-emoji-container > div .msg-emoji-class ul > li > a.emoji-class-3 span {
     background-position: 0 -102px;
 }
-#addComment div.msg-emoji-container > div .msg-emoji-class ul > li > a.emoji-class-4 span.emoji-hover{
+
+#addComment div.msg-emoji-container > div .msg-emoji-class ul > li > a.emoji-class-4 span.emoji-hover {
     background-position: 0 -17px;
 }
-#addComment div.msg-emoji-container > div .msg-emoji-class ul > li > a.emoji-class-4 span.emoji-normal{
+
+#addComment div.msg-emoji-container > div .msg-emoji-class ul > li > a.emoji-class-4 span {
     background-position: 0 0;
 }
-#addComment div.msg-emoji-container > div .msg-emoji-class ul > li > a.emoji-class-5 span.emoji-hover{
+
+#addComment div.msg-emoji-container > div .msg-emoji-class ul > li > a.emoji-class-5 span.emoji-hover {
     background-position: 0 -153px;
 }
-#addComment div.msg-emoji-container > div .msg-emoji-class ul > li > a.emoji-class-5 span.emoji-normal{
+
+#addComment div.msg-emoji-container > div .msg-emoji-class ul > li > a.emoji-class-5 span {
     background-position: 0 -136px;
 }
-#addComment div.msg-emoji-container > div .msg-emoji-class ul > li > a.emoji-class-6 span.emoji-hover{
+
+#addComment div.msg-emoji-container > div .msg-emoji-class ul > li > a.emoji-class-6 span.emoji-hover {
     background-position: 0 -255px;
 }
-#addComment div.msg-emoji-container > div .msg-emoji-class ul > li > a.emoji-class-6 span.emoji-normal{
+
+#addComment div.msg-emoji-container > div .msg-emoji-class ul > li > a.emoji-class-6 span {
     background-position: 0 -238px;
 }
-#addComment div.msg-emoji-container > div .msg-emoji-class ul > li > a.emoji-class-7 span.emoji-hover{
+
+#addComment div.msg-emoji-container > div .msg-emoji-class ul > li > a.emoji-class-7 span.emoji-hover {
     background-position: 0 -289px;
 }
-#addComment div.msg-emoji-container > div .msg-emoji-class ul > li > a.emoji-class-7 span.emoji-normal{
+
+#addComment div.msg-emoji-container > div .msg-emoji-class ul > li > a.emoji-class-7 span {
     background-position: 0 -272px;
 }
-#addComment div.msg-emoji-container > div .msg-emoji-class ul > li > a.emoji-class-8 span.emoji-hover{
+
+#addComment div.msg-emoji-container > div .msg-emoji-class ul > li > a.emoji-class-8 span.emoji-hover {
     background-position: 0 -85px;
 }
-#addComment div.msg-emoji-container > div .msg-emoji-class ul > li > a.emoji-class-8 span.emoji-normal{
+
+#addComment div.msg-emoji-container > div .msg-emoji-class ul > li > a.emoji-class-8 span {
     background-position: 0 -68px;
 }
 
@@ -172,31 +235,32 @@
     right: 12px;
 }
 
-
-#messageListContainer img.msg-avatar{
-    width:40px;
-    height:40px;
+#messageListContainer img.msg-avatar {
+    width: 40px;
+    height: 40px;
     border-radius: 3px;
-    border:1px solid #dff0d8;
+    border: 1px solid #dff0d8;
     float: left;
 }
-#messageListContainer ul.msg-level-1 > li{
+
+#messageListContainer ul.msg-level-1 > li {
     margin-bottom: 15px;
 }
 
-#messageListContainer ul.msg-level-2{
+#messageListContainer ul.msg-level-2 {
     margin-left: 40px;
 }
-#messageListContainer ul.msg-level-2 img.msg-avatar{
-    width:25px;
-    height:25px;
+
+#messageListContainer ul.msg-level-2 img.msg-avatar {
+    width: 25px;
+    height: 25px;
 }
 
-#messageListContainer div.msg-info{
+#messageListContainer div.msg-info {
     float: left;
 }
 
-#messageListContainer div.msg-info span.msg-info-nickname{
-    color:darkblue;
+#messageListContainer div.msg-info span.msg-info-nickname {
+    color: darkblue;
     font-weight: bolder;
 }
