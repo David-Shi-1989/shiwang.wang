@@ -93,36 +93,34 @@
     width: 4800px;
 }
 
-#addComment div.msg-emoji-container > div .msg-emoji-list > div > ul {
+#addComment div.msg-emoji-container > div .msg-emoji-list > div > div.clearfix {
     list-style: none;
     width: 600px;
     float: left;
     padding:4px;
 }
-
-#addComment div.msg-emoji-container > div .msg-emoji-list  > div > ul li {
+#addComment div.msg-emoji-container > div .msg-emoji-list > div > div.clearfix > div{
+    width: 596px;
+    height:150px;
+    overflow-x: auto;
+}
+#addComment div.msg-emoji-container > div .msg-emoji-list  > div > div.clearfix span.emojiwrapper{
     display: inline-block;
+    width:28px;
+    height:28px;
+    padding:1px;
+    border:1px solid transparent;
 }
-
-#addComment div.msg-emoji-container > div .msg-emoji-list  > div > ul li a {
-    cursor: pointer;
-    display: block;
-    width: 28px;
-    height: 28px;
-    box-sizing: border-box;
-    border: 1px solid transparent;
-}
-
-#addComment div.msg-emoji-container > div .msg-emoji-list  > div > ul li a:hover {
-    border: 1px solid #777;
-}
-
-#addComment div.msg-emoji-container > div .msg-emoji-list  > div > ul li a span {
-    display: block;
+#addComment div.msg-emoji-container > div .msg-emoji-list  > div > div.clearfix span.emoji {
+    display:block;
     width:24px;
     height:24px;
-    background-image: url("../image/emoji/emoji8-20160718.min.png");
+    background-image: url("../image/emoji/fbv9.min.png");
 }
+#addComment div.msg-emoji-container > div .msg-emoji-list  > div > div.clearfix span.emojiwrapper:hover{
+    border:1px solid #555;
+}
+
 
 #addComment div.msg-emoji-container > div .msg-emoji-class {
     padding: 7px 10px;
